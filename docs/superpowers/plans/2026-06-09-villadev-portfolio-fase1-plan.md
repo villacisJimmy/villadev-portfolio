@@ -25,20 +25,20 @@
 
 ## Mapa de fases
 
-| Fase | Alcance | Tareas |
-|---|---|---|
-| A | Bootstrap del proyecto, tooling, SSDLC pre-commit | A1–A8 |
-| B | Tokens, fuentes, i18n, librerías core (logger, CSP, rate limit) | B1–B9 |
-| C | Contenido tipado + middleware + UI primitives | C1–C5 |
-| D | Componentes de las secciones (Navbar..Footer) + Home | D1–D11 |
-| E | Catálogo de proyectos + filtro | E1–E2 |
-| F | Form de contacto: schema, Resend, server action, UI, tests E2E | F1–F6 |
-| G | Health endpoint + verificación local end-to-end | G1–G2 |
-| H | Containerización (Dockerfile + compose) | H1–H3 |
-| I | CI/CD (GitHub Actions: CI + CD) | I1–I3 |
-| J | Endurecimiento del VPS + Nginx + TLS + deploy.sh + backups | J1–J8 |
-| K | Documentación (threat model, runbook, secrets-setup) | K1–K3 |
-| L | Lanzamiento + verificación post-deploy + snapshot | L1–L4 |
+| Fase | Alcance                                                         | Tareas |
+| ---- | --------------------------------------------------------------- | ------ |
+| A    | Bootstrap del proyecto, tooling, SSDLC pre-commit               | A1–A8  |
+| B    | Tokens, fuentes, i18n, librerías core (logger, CSP, rate limit) | B1–B9  |
+| C    | Contenido tipado + middleware + UI primitives                   | C1–C5  |
+| D    | Componentes de las secciones (Navbar..Footer) + Home            | D1–D11 |
+| E    | Catálogo de proyectos + filtro                                  | E1–E2  |
+| F    | Form de contacto: schema, Resend, server action, UI, tests E2E  | F1–F6  |
+| G    | Health endpoint + verificación local end-to-end                 | G1–G2  |
+| H    | Containerización (Dockerfile + compose)                         | H1–H3  |
+| I    | CI/CD (GitHub Actions: CI + CD)                                 | I1–I3  |
+| J    | Endurecimiento del VPS + Nginx + TLS + deploy.sh + backups      | J1–J8  |
+| K    | Documentación (threat model, runbook, secrets-setup)            | K1–K3  |
+| L    | Lanzamiento + verificación post-deploy + snapshot               | L1–L4  |
 
 Total estimado: 57 tareas. Cada tarea: 2–5 min por paso, 4–8 pasos típicamente.
 
@@ -49,6 +49,7 @@ Total estimado: 57 tareas. Cada tarea: 2–5 min por paso, 4–8 pasos típicame
 ### Tarea A1: Crear scaffold Next.js + TypeScript estricto
 
 **Files:**
+
 - Create: `package.json`, `tsconfig.json`, `next.config.ts`, `next-env.d.ts`, `src/app/layout.tsx`, `src/app/page.tsx`, `public/`, `.nvmrc`
 
 - [ ] **Step 1: Inicializar Next.js sin telemetría ni asistente interactivo**
@@ -141,6 +142,7 @@ git add . && git commit -m "chore: scaffold Next.js 15 + TS strict + standalone 
 ### Tarea A2: Configurar ESLint con plugin de seguridad + Prettier
 
 **Files:**
+
 - Modify: `eslint.config.mjs`, `package.json`
 - Create: `.prettierrc`, `.prettierignore`
 
@@ -235,6 +237,7 @@ git add . && git commit -m "chore: add eslint-plugin-security, no-secrets, prett
 ### Tarea A3: Husky + lint-staged + gitleaks pre-commit
 
 **Files:**
+
 - Create: `.husky/pre-commit`, `.lintstagedrc.json`, `.gitleaks.toml`
 - Modify: `package.json`
 
@@ -305,6 +308,7 @@ git add .husky/ .lintstagedrc.json .gitleaks.toml package.json package-lock.json
 ### Tarea A4: Vitest configurado para Node + jsdom
 
 **Files:**
+
 - Create: `vitest.config.ts`, `vitest.setup.ts`, `tests/unit/.gitkeep`
 - Modify: `package.json`
 
@@ -385,6 +389,7 @@ git add . && git commit -m "test: configure vitest with jsdom + RTL"
 ### Tarea A5: Playwright para E2E
 
 **Files:**
+
 - Create: `playwright.config.ts`, `tests/e2e/smoke.spec.ts`
 - Modify: `package.json`, `.gitignore`
 
@@ -474,6 +479,7 @@ git add . && git commit -m "test: configure playwright e2e with webServer"
 ### Tarea A6: `.env.example` con todas las variables documentadas
 
 **Files:**
+
 - Create: `.env.example`
 
 - [ ] **Step 1: Crear `.env.example`**
@@ -531,6 +537,7 @@ git add .env.example .gitignore && git commit -m "chore: document env vars in .e
 ### Tarea A7: Estructura de carpetas src/
 
 **Files:**
+
 - Create directorios: `src/lib/`, `src/lib/i18n/`, `src/lib/schemas/`, `src/lib/email/`, `src/components/ui/`, `src/content/`, `src/server-actions/`, `src/styles/`, `tests/unit/`, `tests/e2e/`, `docs/`
 
 - [ ] **Step 1: Crear carpetas con `.gitkeep`**
@@ -591,6 +598,7 @@ Esperado: working tree clean.
 ### Tarea B1: Portar tokens CSS del prototipo
 
 **Files:**
+
 - Create: `src/styles/tokens.css`
 
 - [ ] **Step 1: Crear `src/styles/tokens.css`** copiando tal cual el bloque `:root { ... }` de `~/Documents/Claude/Projects/design_handoff_villadev_portfolio/design/assets/styles.css` (líneas 6-44). Contenido:
@@ -598,38 +606,38 @@ Esperado: working tree clean.
 ```css
 :root {
   /* Surfaces */
-  --bg:        #070b14;
-  --bg-2:      #0a1020;
-  --panel:     #0d1424;
-  --card:      #101a2e;
-  --card-2:    #13203a;
-  --border:    rgba(120, 160, 220, 0.12);
-  --border-2:  rgba(120, 160, 220, 0.22);
+  --bg: #070b14;
+  --bg-2: #0a1020;
+  --panel: #0d1424;
+  --card: #101a2e;
+  --card-2: #13203a;
+  --border: rgba(120, 160, 220, 0.12);
+  --border-2: rgba(120, 160, 220, 0.22);
 
   /* Text */
-  --text:      #e8eef9;
-  --muted:     #8b9bb4;
-  --dim:       #5e6e88;
+  --text: #e8eef9;
+  --muted: #8b9bb4;
+  --dim: #5e6e88;
 
   /* Accents */
-  --blue:      #3b82f6;
-  --blue-2:    #60a5fa;
-  --cyan:      #22d3ee;
-  --term:      #43e6a0;
-  --term-dim:  #1f7a55;
-  --warn:      #fbbf24;
+  --blue: #3b82f6;
+  --blue-2: #60a5fa;
+  --cyan: #22d3ee;
+  --term: #43e6a0;
+  --term-dim: #1f7a55;
+  --warn: #fbbf24;
 
-  --grad:      linear-gradient(110deg, var(--blue) 0%, var(--cyan) 100%);
-  --grad-soft: linear-gradient(110deg, rgba(59,130,246,0.16), rgba(34,211,238,0.10));
+  --grad: linear-gradient(110deg, var(--blue) 0%, var(--cyan) 100%);
+  --grad-soft: linear-gradient(110deg, rgba(59, 130, 246, 0.16), rgba(34, 211, 238, 0.1));
 
   /* Layout */
-  --maxw:      1200px;
-  --gutter:    clamp(20px, 5vw, 64px);
-  --radius:    16px;
+  --maxw: 1200px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --radius: 16px;
   --radius-sm: 10px;
 
-  --shadow:    0 24px 60px -20px rgba(0,0,0,0.7);
-  --glow:      0 0 0 1px rgba(59,130,246,0.25), 0 18px 50px -16px rgba(34,211,238,0.28);
+  --shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+  --glow: 0 0 0 1px rgba(59, 130, 246, 0.25), 0 18px 50px -16px rgba(34, 211, 238, 0.28);
 }
 ```
 
@@ -646,6 +654,7 @@ git add src/styles/tokens.css && git commit -m "feat(styles): port design tokens
 ### Tarea B2: Cargar Space Grotesk + JetBrains Mono con `next/font` (self-hosted)
 
 **Files:**
+
 - Create: `src/styles/fonts.ts`
 
 - [ ] **Step 1: Crear `src/styles/fonts.ts`**
@@ -679,6 +688,7 @@ git add src/styles/fonts.ts && git commit -m "feat(styles): self-host Space Grot
 ### Tarea B3: Estilos globales
 
 **Files:**
+
 - Create: `src/styles/globals.css`
 
 - [ ] **Step 1: Crear `src/styles/globals.css`** con: import de `tokens.css`, mapeo de variables de fuente desde next/font, y la base reset/typography portada de las líneas 46-92 + 94-121 + 770-792 del prototipo. Contenido:
@@ -691,8 +701,12 @@ git add src/styles/fonts.ts && git commit -m "feat(styles): self-host Space Grot
   --mono: var(--font-mono), ui-monospace, "SFMono-Regular", monospace;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: var(--sans);
@@ -703,23 +717,45 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
-::selection { background: rgba(34,211,238,0.28); color: #fff; }
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
+::selection {
+  background: rgba(34, 211, 238, 0.28);
+  color: #fff;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
 
-.shell { position: relative; z-index: 1; }
+.shell {
+  position: relative;
+  z-index: 1;
+}
 .wrap {
-  width: 100%; max-width: var(--maxw);
-  margin: 0 auto; padding-inline: var(--gutter);
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
 }
 .bg-grad {
-  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
   background:
-    radial-gradient(900px 600px at 78% -8%, rgba(34,211,238,0.10), transparent 60%),
-    radial-gradient(800px 600px at 12% 8%, rgba(59,130,246,0.12), transparent 55%),
-    radial-gradient(1000px 700px at 50% 120%, rgba(59,130,246,0.08), transparent 60%);
+    radial-gradient(900px 600px at 78% -8%, rgba(34, 211, 238, 0.1), transparent 60%),
+    radial-gradient(800px 600px at 12% 8%, rgba(59, 130, 246, 0.12), transparent 55%),
+    radial-gradient(1000px 700px at 50% 120%, rgba(59, 130, 246, 0.08), transparent 60%);
 }
-.bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
 
 .eyebrow {
   font-family: var(--mono);
@@ -727,14 +763,26 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--cyan);
-  display: inline-flex; align-items: center; gap: 0.6em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
 }
 .eyebrow::before {
-  content: ""; width: 26px; height: 1px;
-  background: var(--cyan); opacity: 0.6;
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--cyan);
+  opacity: 0.6;
 }
 
-h1, h2, h3 { font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; margin: 0; }
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
 
 .gradient-text {
   background: linear-gradient(100deg, #fff 0%, var(--blue-2) 55%, var(--cyan) 100%);
@@ -743,30 +791,64 @@ h1, h2, h3 { font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; margi
   color: transparent;
 }
 
-section { position: relative; }
-.section { padding-block: clamp(70px, 11vw, 140px); }
-.section-head { max-width: 720px; margin-bottom: clamp(36px, 5vw, 64px); }
-.section-head h2 { font-size: clamp(2rem, 4.4vw, 3.1rem); margin-top: 0.5em; }
+section {
+  position: relative;
+}
+.section {
+  padding-block: clamp(70px, 11vw, 140px);
+}
+.section-head {
+  max-width: 720px;
+  margin-bottom: clamp(36px, 5vw, 64px);
+}
+.section-head h2 {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  margin-top: 0.5em;
+}
 .section-head p {
-  color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.15rem);
-  margin: 1em 0 0; max-width: 60ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  margin: 1em 0 0;
+  max-width: 60ch;
 }
 
-.reveal { opacity: 0; transform: translateY(26px);
-  transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); }
-.reveal.in { opacity: 1; transform: none; }
-.reveal.d1 { transition-delay: .08s; }
-.reveal.d2 { transition-delay: .16s; }
-.reveal.d3 { transition-delay: .24s; }
-.reveal.d4 { transition-delay: .32s; }
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+.reveal.d1 {
+  transition-delay: 0.08s;
+}
+.reveal.d2 {
+  transition-delay: 0.16s;
+}
+.reveal.d3 {
+  transition-delay: 0.24s;
+}
+.reveal.d4 {
+  transition-delay: 0.32s;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-  html { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
 ```
 
-> Las clases específicas de cada componente (`.nav`, `.hero`, `.service`, etc.) viven en CSS Modules de cada componente (tareas D*). Aquí sólo va lo verdaderamente global.
+> Las clases específicas de cada componente (`.nav`, `.hero`, `.service`, etc.) viven en CSS Modules de cada componente (tareas D\*). Aquí sólo va lo verdaderamente global.
 
 - [ ] **Step 2: Commit**
 
@@ -779,6 +861,7 @@ git add src/styles/globals.css && git commit -m "feat(styles): add globals.css w
 ### Tarea B4: Instalar y configurar `next-intl`
 
 **Files:**
+
 - Create: `src/lib/i18n/config.ts`, `src/lib/i18n/routing.ts`, `src/lib/i18n/request.ts`, `messages/es.json`, `messages/en.json`
 - Modify: `next.config.ts`
 
@@ -852,18 +935,30 @@ export default withNextIntl(nextConfig);
 
 ```json
 {
-  "nav": { "services": "Servicios", "about": "Sobre mí", "projects": "Proyectos", "experience": "Experiencia", "skills": "Skills", "contact": "Contacto", "cta": "Hablemos" },
+  "nav": {
+    "services": "Servicios",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "skills": "Skills",
+    "contact": "Contacto",
+    "cta": "Hablemos"
+  },
   "hero": {
     "badge": "Disponible para proyectos",
     "h1a": "Aplicaciones web y automatizaciones,",
     "h1b": "con seguridad por diseño.",
     "lead": "Diseño, desarrollo e implemento ...",
-    "cta1": "Ver servicios", "cta2": "Conversemos",
+    "cta1": "Ver servicios",
+    "cta2": "Conversemos",
     "stat1": { "n": "8+", "l": "años en tecnología y soporte" },
     "stat2": { "n": "12+", "l": "certificaciones técnicas" },
     "stat3": { "n": "CCNA", "l": "+ formación en seguridad ofensiva" }
   },
-  "services": { "eyebrow": "Lo que hago", "h2": "...", "p": "...",
+  "services": {
+    "eyebrow": "Lo que hago",
+    "h2": "...",
+    "p": "...",
     "items": {
       "svc1": { "t": "Desarrollo de aplicaciones web", "p": "..." },
       "svc2": { "t": "Automatización con n8n", "p": "..." },
@@ -871,26 +966,75 @@ export default withNextIntl(nextConfig);
       "svc4": { "t": "Entrega acelerada con IA", "p": "..." }
     }
   },
-  "about": { "eyebrow": "Sobre mí", "h2": "...", "p1": "...", "p2": "...",
-    "facts": { "f1k": "Ubicación", "f1v": "Santiago, Chile", "f2k": "...", "f2v": "...", "f3k": "...", "f3v": "...", "f4k": "...", "f4v": "..." }
+  "about": {
+    "eyebrow": "Sobre mí",
+    "h2": "...",
+    "p1": "...",
+    "p2": "...",
+    "facts": {
+      "f1k": "Ubicación",
+      "f1v": "Santiago, Chile",
+      "f2k": "...",
+      "f2v": "...",
+      "f3k": "...",
+      "f3v": "...",
+      "f4k": "...",
+      "f4v": "..."
+    }
   },
-  "projects": { "eyebrow": "Trabajo", "h2": "Proyectos seleccionados.", "p": "...", "viewall": "Ver todos los proyectos" },
+  "projects": {
+    "eyebrow": "Trabajo",
+    "h2": "Proyectos seleccionados.",
+    "p": "...",
+    "viewall": "Ver todos los proyectos"
+  },
   "experience": { "eyebrow": "Trayectoria", "h2": "Experiencia profesional.", "p": "..." },
   "certs": { "eyebrow": "Credenciales", "h2": "Certificaciones y formación.", "p": "..." },
   "skills": { "eyebrow": "Stack", "h2": "Habilidades técnicas.", "p": "..." },
   "contact": { "eyebrow": "Contacto", "h2": "¿Tienes un proyecto en mente?", "p": "..." },
   "form": {
-    "name": "Nombre", "namePh": "Tu nombre",
-    "email": "Correo", "emailPh": "tucorreo@ejemplo.com",
+    "name": "Nombre",
+    "namePh": "Tu nombre",
+    "email": "Correo",
+    "emailPh": "tucorreo@ejemplo.com",
     "subject": "Asunto",
-    "opts": { "proyecto": "Desarrollo de aplicación web", "consultoria": "Automatización con n8n", "colaboracion": "Seguridad / auditoría", "otro": "Otro" },
-    "message": "Mensaje", "messagePh": "Describe brevemente tu proyecto…",
+    "opts": {
+      "proyecto": "Desarrollo de aplicación web",
+      "consultoria": "Automatización con n8n",
+      "colaboracion": "Seguridad / auditoría",
+      "otro": "Otro"
+    },
+    "message": "Mensaje",
+    "messagePh": "Describe brevemente tu proyecto…",
     "send": "Enviar mensaje",
-    "states": { "submitting": "Enviando…", "success": "Mensaje enviado. Te respondo pronto.", "error": "No se pudo enviar. Intenta de nuevo en un minuto.", "rateLimit": "Demasiados intentos. Intenta más tarde.", "validation": "Revisa los campos." }
+    "states": {
+      "submitting": "Enviando…",
+      "success": "Mensaje enviado. Te respondo pronto.",
+      "error": "No se pudo enviar. Intenta de nuevo en un minuto.",
+      "rateLimit": "Demasiados intentos. Intenta más tarde.",
+      "validation": "Revisa los campos."
+    }
   },
-  "footer": { "tagline": "...", "nav": "Navegación", "connect": "Conecta", "rights": "Todos los derechos reservados.", "built": "..." },
-  "projpage": { "title": "Proyectos — VillaDev", "eyebrow": "Portafolio de trabajo", "h2": "Todos los proyectos.", "p": "...", "back": "Volver al inicio" },
-  "filter": { "all": "Todos", "web": "Desarrollo web", "auto": "Automatización", "sec": "Seguridad" }
+  "footer": {
+    "tagline": "...",
+    "nav": "Navegación",
+    "connect": "Conecta",
+    "rights": "Todos los derechos reservados.",
+    "built": "..."
+  },
+  "projpage": {
+    "title": "Proyectos — VillaDev",
+    "eyebrow": "Portafolio de trabajo",
+    "h2": "Todos los proyectos.",
+    "p": "...",
+    "back": "Volver al inicio"
+  },
+  "filter": {
+    "all": "Todos",
+    "web": "Desarrollo web",
+    "auto": "Automatización",
+    "sec": "Seguridad"
+  }
 }
 ```
 
@@ -927,6 +1071,7 @@ git add . && git commit -m "feat(i18n): configure next-intl with locales es/en a
 ### Tarea B5: Logger pino con redacción (TDD)
 
 **Files:**
+
 - Create: `src/lib/logger.ts`, `src/lib/logger.test.ts`
 
 - [ ] **Step 1: Instalar pino**
@@ -981,9 +1126,18 @@ Esperado: FAIL (módulo no existe).
 import pino from "pino";
 
 const SENSITIVE = new Set([
-  "password", "passwd", "secret", "token", "authorization",
-  "cookie", "set-cookie", "api_key", "apikey",
-  "resend_api_key", "ghcr_token", "vps_ssh_key",
+  "password",
+  "passwd",
+  "secret",
+  "token",
+  "authorization",
+  "cookie",
+  "set-cookie",
+  "api_key",
+  "apikey",
+  "resend_api_key",
+  "ghcr_token",
+  "vps_ssh_key",
 ]);
 
 export function redactValue(key: string, value: unknown): unknown {
@@ -1023,6 +1177,7 @@ git add src/lib/logger.ts src/lib/logger.test.ts package.json package-lock.json 
 ### Tarea B6: Helper de IP real desde headers (TDD)
 
 **Files:**
+
 - Create: `src/lib/client-ip.ts`, `src/lib/client-ip.test.ts`
 
 - [ ] **Step 1: Test failing**
@@ -1037,10 +1192,14 @@ function h(map: Record<string, string>) {
 
 describe("getClientIp", () => {
   it("prefers CF-Connecting-IP when TRUSTED_PROXY=cloudflare", () => {
-    expect(getClientIp(h({ "cf-connecting-ip": "1.2.3.4", "x-forwarded-for": "9.9.9.9" }), "cloudflare")).toBe("1.2.3.4");
+    expect(
+      getClientIp(h({ "cf-connecting-ip": "1.2.3.4", "x-forwarded-for": "9.9.9.9" }), "cloudflare"),
+    ).toBe("1.2.3.4");
   });
   it("uses last hop of X-Forwarded-For when TRUSTED_PROXY=nginx", () => {
-    expect(getClientIp(h({ "x-forwarded-for": "203.0.113.5, 10.0.0.1" }), "nginx")).toBe("10.0.0.1");
+    expect(getClientIp(h({ "x-forwarded-for": "203.0.113.5, 10.0.0.1" }), "nginx")).toBe(
+      "10.0.0.1",
+    );
   });
   it("falls back to 'unknown' if header missing", () => {
     expect(getClientIp(h({}), "nginx")).toBe("unknown");
@@ -1073,7 +1232,10 @@ export function getClientIp(headers: HeaderLike, mode: ProxyMode = "nginx"): str
   }
   const xff = headers.get("x-forwarded-for");
   if (xff) {
-    const parts = xff.split(",").map((s) => s.trim()).filter(Boolean);
+    const parts = xff
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
     const last = parts[parts.length - 1];
     if (last && valid(last)) return last;
   }
@@ -1093,6 +1255,7 @@ git add src/lib/client-ip.ts src/lib/client-ip.test.ts && git commit -m "feat(li
 ### Tarea B7: Rate limit token bucket en memoria (TDD)
 
 **Files:**
+
 - Create: `src/lib/rate-limit.ts`, `src/lib/rate-limit.test.ts`
 
 - [ ] **Step 1: Test failing**
@@ -1156,7 +1319,11 @@ export function createRateLimiter(opts: Opts) {
         return { allowed: true, remaining: opts.max - 1, retryAfterSeconds: 0 };
       }
       if (b.count >= opts.max) {
-        return { allowed: false, remaining: 0, retryAfterSeconds: Math.ceil((b.resetAt - now) / 1000) };
+        return {
+          allowed: false,
+          remaining: 0,
+          retryAfterSeconds: Math.ceil((b.resetAt - now) / 1000),
+        };
       }
       b.count += 1;
       return { allowed: true, remaining: opts.max - b.count, retryAfterSeconds: 0 };
@@ -1177,6 +1344,7 @@ git add src/lib/rate-limit.ts src/lib/rate-limit.test.ts && git commit -m "feat(
 ### Tarea B8: Helper CSP nonce + cabeceras de seguridad (TDD)
 
 **Files:**
+
 - Create: `src/lib/csp.ts`, `src/lib/csp.test.ts`
 
 - [ ] **Step 1: Test failing**
@@ -1264,6 +1432,7 @@ git add src/lib/csp.ts src/lib/csp.test.ts && git commit -m "feat(lib): CSP nonc
 ### Tarea B9: Middleware Next.js (i18n + headers + nonce)
 
 **Files:**
+
 - Create: `src/middleware.ts`
 
 - [ ] **Step 1: Implementar**
@@ -1281,9 +1450,7 @@ export default function middleware(req: NextRequest) {
   const reqHeaders = new Headers(req.headers);
   reqHeaders.set("x-csp-nonce", nonce);
 
-  const res = intlMiddleware(
-    new NextRequest(req, { headers: reqHeaders }),
-  ) as NextResponse;
+  const res = intlMiddleware(new NextRequest(req, { headers: reqHeaders })) as NextResponse;
 
   for (const [k, v] of Object.entries(securityHeaders(nonce))) {
     res.headers.set(k, v);
@@ -1316,6 +1483,7 @@ git add src/middleware.ts && git commit -m "feat(middleware): i18n routing + per
 ### Tarea C1: Tipos de contenido
 
 **Files:**
+
 - Create: `src/content/types.ts`
 
 - [ ] **Step 1: Crear `src/content/types.ts`**
@@ -1386,6 +1554,7 @@ git add src/content/types.ts && git commit -m "feat(content): define typed conte
 ### Tarea C2: Datos de contenido (seed desde el prototipo)
 
 **Files:**
+
 - Create: `src/content/projects.ts`, `src/content/services.ts`, `src/content/experience.ts`, `src/content/certifications.ts`, `src/content/skills.ts`
 
 - [ ] **Step 1: `src/content/projects.ts`**
@@ -1395,22 +1564,44 @@ import type { Project } from "./types";
 
 export const projects: readonly Project[] = [
   {
-    id: "blog", slug: "blog-tecnico", featured: true,
-    titleKey: "prj1.t", descKey: "prj1.p", linkKey: "prj1.link", statusKey: "prj1.status",
-    status: "live", category: "sec", url: "https://villacisjimmy.github.io/blog/",
-    glyph: "</>", tags: ["Security", "Networking", "Writeups"],
+    id: "blog",
+    slug: "blog-tecnico",
+    featured: true,
+    titleKey: "prj1.t",
+    descKey: "prj1.p",
+    linkKey: "prj1.link",
+    statusKey: "prj1.status",
+    status: "live",
+    category: "sec",
+    url: "https://villacisjimmy.github.io/blog/",
+    glyph: "</>",
+    tags: ["Security", "Networking", "Writeups"],
   },
   {
-    id: "n8n", slug: "automatizacion-n8n", featured: true,
-    titleKey: "prj2.t", descKey: "prj2.p", linkKey: "prj2.link", statusKey: "prj2.status",
-    status: "soon", category: "auto",
-    glyph: "⚙", tags: ["n8n", "APIs", "Automation"],
+    id: "n8n",
+    slug: "automatizacion-n8n",
+    featured: true,
+    titleKey: "prj2.t",
+    descKey: "prj2.p",
+    linkKey: "prj2.link",
+    statusKey: "prj2.status",
+    status: "soon",
+    category: "auto",
+    glyph: "⚙",
+    tags: ["n8n", "APIs", "Automation"],
   },
   {
-    id: "fullstack", slug: "app-fullstack", featured: true,
-    titleKey: "prj3.t", descKey: "prj3.p", linkKey: "prj3.link", statusKey: "prj3.status",
-    status: "soon", category: "web",
-    glyph: "{ }", tags: ["Full-stack", "Django", "SQL"],
+    id: "fullstack",
+    slug: "app-fullstack",
+    featured: true,
+    titleKey: "prj3.t",
+    descKey: "prj3.p",
+    linkKey: "prj3.link",
+    statusKey: "prj3.status",
+    status: "soon",
+    category: "web",
+    glyph: "{ }",
+    tags: ["Full-stack", "Django", "SQL"],
   },
 ] as const;
 ```
@@ -1421,10 +1612,38 @@ export const projects: readonly Project[] = [
 import type { Service } from "./types";
 
 export const services: readonly Service[] = [
-  { id: "web", index: "01", titleKey: "items.svc1.t", descKey: "items.svc1.p", tags: ["JavaScript", "Python", "Django", "SQL"], icon: "code" },
-  { id: "auto", index: "02", titleKey: "items.svc2.t", descKey: "items.svc2.p", tags: ["n8n", "APIs", "Webhooks", "Docker"], icon: "automation" },
-  { id: "sec", index: "03", titleKey: "items.svc3.t", descKey: "items.svc3.p", tags: ["Pentesting", "Hardening", "OWASP"], icon: "shield" },
-  { id: "ai", index: "04", titleKey: "items.svc4.t", descKey: "items.svc4.p", tags: ["Claude", "ChatGPT", "Gemini"], icon: "spark" },
+  {
+    id: "web",
+    index: "01",
+    titleKey: "items.svc1.t",
+    descKey: "items.svc1.p",
+    tags: ["JavaScript", "Python", "Django", "SQL"],
+    icon: "code",
+  },
+  {
+    id: "auto",
+    index: "02",
+    titleKey: "items.svc2.t",
+    descKey: "items.svc2.p",
+    tags: ["n8n", "APIs", "Webhooks", "Docker"],
+    icon: "automation",
+  },
+  {
+    id: "sec",
+    index: "03",
+    titleKey: "items.svc3.t",
+    descKey: "items.svc3.p",
+    tags: ["Pentesting", "Hardening", "OWASP"],
+    icon: "shield",
+  },
+  {
+    id: "ai",
+    index: "04",
+    titleKey: "items.svc4.t",
+    descKey: "items.svc4.p",
+    tags: ["Claude", "ChatGPT", "Gemini"],
+    icon: "spark",
+  },
 ] as const;
 ```
 
@@ -1434,11 +1653,51 @@ export const services: readonly Service[] = [
 import type { ExperienceItem } from "./types";
 
 export const experience: readonly ExperienceItem[] = [
-  { id: "inev", current: true, roleKey: "items.exp1.role", coKey: "items.exp1.co", whenKey: "items.exp1.when", descKey: "items.exp1.p", chips: ["VLAN", "UniFi UDM", "HP iLO", "Trello", "Gantt"] },
-  { id: "aus", current: false, roleKey: "items.exp2.role", coKey: "items.exp2.co", whenKey: "items.exp2.when", descKey: "items.exp2.p", chips: ["English B2", "Adaptabilidad"] },
-  { id: "cgs", current: false, roleKey: "items.exp3.role", coKey: "items.exp3.co", whenKey: "items.exp3.when", descKey: "items.exp3.p", chips: ["Clientes B2B", "Integraciones"] },
-  { id: "entel", current: false, roleKey: "items.exp4.role", coKey: "items.exp4.co", whenKey: "items.exp4.when", descKey: "items.exp4.p", chips: ["Windows", "Linux", "Active Directory"] },
-  { id: "cam", current: false, roleKey: "items.exp5.role", coKey: "items.exp5.co", whenKey: "items.exp5.when", descKey: "items.exp5.p", chips: ["FTTH", "Fibra óptica", "CTO/NAP"] },
+  {
+    id: "inev",
+    current: true,
+    roleKey: "items.exp1.role",
+    coKey: "items.exp1.co",
+    whenKey: "items.exp1.when",
+    descKey: "items.exp1.p",
+    chips: ["VLAN", "UniFi UDM", "HP iLO", "Trello", "Gantt"],
+  },
+  {
+    id: "aus",
+    current: false,
+    roleKey: "items.exp2.role",
+    coKey: "items.exp2.co",
+    whenKey: "items.exp2.when",
+    descKey: "items.exp2.p",
+    chips: ["English B2", "Adaptabilidad"],
+  },
+  {
+    id: "cgs",
+    current: false,
+    roleKey: "items.exp3.role",
+    coKey: "items.exp3.co",
+    whenKey: "items.exp3.when",
+    descKey: "items.exp3.p",
+    chips: ["Clientes B2B", "Integraciones"],
+  },
+  {
+    id: "entel",
+    current: false,
+    roleKey: "items.exp4.role",
+    coKey: "items.exp4.co",
+    whenKey: "items.exp4.when",
+    descKey: "items.exp4.p",
+    chips: ["Windows", "Linux", "Active Directory"],
+  },
+  {
+    id: "cam",
+    current: false,
+    roleKey: "items.exp5.role",
+    coKey: "items.exp5.co",
+    whenKey: "items.exp5.when",
+    descKey: "items.exp5.p",
+    chips: ["FTTH", "Fibra óptica", "CTO/NAP"],
+  },
 ] as const;
 ```
 
@@ -1450,18 +1709,60 @@ export const experience: readonly ExperienceItem[] = [
 import type { Certification } from "./types";
 
 export const certifications: readonly Certification[] = [
-  { id: "fsjs",    name: "Bootcamp Full Stack JavaScript",       issuer: "en curso",                year: 2025, ongoing: true },
-  { id: "linux",   name: "Linux para DevOps",                    issuer: "DevOps",                  year: 2025, ongoing: false },
-  { id: "secp",    name: "CompTIA Security+",                    issuer: "preparando cert.",        year: 2025, ongoing: true },
-  { id: "iax",     name: "Transformación Digital con IA",        issuer: "IA & Automatización",     year: 2025, ongoing: false },
-  { id: "cnios",   name: "Cisco CNIOS",                          issuer: "Network Operating Systems", year: 2025, ongoing: false },
-  { id: "ccna",    name: "Cisco CCNA R&S",                       issuer: "Routing & Switching",     year: 2024, ongoing: false },
-  { id: "nse3",    name: "Fortinet NSE 3",                       issuer: "Network Security",        year: 2023, ongoing: false },
-  { id: "qualys",  name: "Qualys VMDR",                          issuer: "Vulnerability Mgmt",      year: 2022, ongoing: false },
-  { id: "aws",     name: "AWS Cloud Technical Essentials",       issuer: "Cloud",                   year: 2021, ongoing: false },
-  { id: "dragon",  name: "Diplomado Seguridad Ofensiva",         issuer: "DragonJAR · Pentesting",  year: 2021, ongoing: false },
-  { id: "duoc",    name: "Diplomado Seguridad de la Información", issuer: "Duoc UC · GPA 6.7",      year: 2020, ongoing: false },
-  { id: "td",      name: "Bootcamps Full Stack (Python/Java)",   issuer: "Talento Digital",         year: 2021, ongoing: false },
+  {
+    id: "fsjs",
+    name: "Bootcamp Full Stack JavaScript",
+    issuer: "en curso",
+    year: 2025,
+    ongoing: true,
+  },
+  { id: "linux", name: "Linux para DevOps", issuer: "DevOps", year: 2025, ongoing: false },
+  { id: "secp", name: "CompTIA Security+", issuer: "preparando cert.", year: 2025, ongoing: true },
+  {
+    id: "iax",
+    name: "Transformación Digital con IA",
+    issuer: "IA & Automatización",
+    year: 2025,
+    ongoing: false,
+  },
+  {
+    id: "cnios",
+    name: "Cisco CNIOS",
+    issuer: "Network Operating Systems",
+    year: 2025,
+    ongoing: false,
+  },
+  { id: "ccna", name: "Cisco CCNA R&S", issuer: "Routing & Switching", year: 2024, ongoing: false },
+  { id: "nse3", name: "Fortinet NSE 3", issuer: "Network Security", year: 2023, ongoing: false },
+  { id: "qualys", name: "Qualys VMDR", issuer: "Vulnerability Mgmt", year: 2022, ongoing: false },
+  {
+    id: "aws",
+    name: "AWS Cloud Technical Essentials",
+    issuer: "Cloud",
+    year: 2021,
+    ongoing: false,
+  },
+  {
+    id: "dragon",
+    name: "Diplomado Seguridad Ofensiva",
+    issuer: "DragonJAR · Pentesting",
+    year: 2021,
+    ongoing: false,
+  },
+  {
+    id: "duoc",
+    name: "Diplomado Seguridad de la Información",
+    issuer: "Duoc UC · GPA 6.7",
+    year: 2020,
+    ongoing: false,
+  },
+  {
+    id: "td",
+    name: "Bootcamps Full Stack (Python/Java)",
+    issuer: "Talento Digital",
+    year: 2021,
+    ongoing: false,
+  },
 ] as const;
 ```
 
@@ -1491,6 +1792,7 @@ npm run typecheck && git add src/content/ && git commit -m "feat(content): seed 
 ### Tarea C3: Layout raíz `[locale]/layout.tsx`
 
 **Files:**
+
 - Create: `src/app/[locale]/layout.tsx`
 - Modify/delete: `src/app/layout.tsx` (eliminar el del scaffold) → reescribir como passthrough mínimo si Next lo requiere.
 
@@ -1525,20 +1827,27 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: locale === "en" ? "VillaDev — Web apps, automation & security" : "VillaDev — Desarrollo web, automatización y seguridad",
-    description: locale === "en"
-      ? "Network engineer (CCNA). Web application development, n8n automation and security by design."
-      : "Ingeniero en Conectividad y Redes (CCNA). Desarrollo de aplicaciones web, automatización con n8n y seguridad por diseño.",
+    title:
+      locale === "en"
+        ? "VillaDev — Web apps, automation & security"
+        : "VillaDev — Desarrollo web, automatización y seguridad",
+    description:
+      locale === "en"
+        ? "Network engineer (CCNA). Web application development, n8n automation and security by design."
+        : "Ingeniero en Conectividad y Redes (CCNA). Desarrollo de aplicaciones web, automatización con n8n y seguridad por diseño.",
     metadataBase: new URL(process.env.SITE_ORIGIN ?? "http://localhost:3000"),
     alternates: { canonical: "/", languages: { es: "/es", en: "/en" } },
   };
 }
 
 export default async function LocaleLayout({
-  children, params,
+  children,
+  params,
 }: {
   children: React.ReactNode;
   params: Promise<{ locale: Locale }>;
@@ -1580,6 +1889,7 @@ git add src/app/ && git commit -m "feat(app): root + [locale] layouts with i18n 
 ### Tarea C4: UI primitives (Button, Chip, Eyebrow, RevealOnScroll)
 
 **Files:**
+
 - Create: `src/components/ui/Button.tsx`, `src/components/ui/Chip.tsx`, `src/components/ui/Eyebrow.tsx`, `src/components/ui/RevealOnScroll.tsx`
 
 - [ ] **Step 1: `Button.tsx`** (port de `.btn`/`.btn-primary`/`.btn-ghost`)
@@ -1618,7 +1928,13 @@ export function ButtonLink(props: AnchorHTMLAttributes<HTMLAnchorElement> & Comm
 import type { ReactNode } from "react";
 import styles from "./Chip.module.css";
 
-export function Chip({ children, tone = "blue" }: { children: ReactNode; tone?: "blue" | "neutral" }) {
+export function Chip({
+  children,
+  tone = "blue",
+}: {
+  children: ReactNode;
+  tone?: "blue" | "neutral";
+}) {
   return <span className={`${styles.chip} ${styles[tone]}`}>{children}</span>;
 }
 ```
@@ -1643,7 +1959,12 @@ export function Eyebrow({ children }: { children: ReactNode }) {
 "use client";
 import { useEffect, useRef, type ReactNode } from "react";
 
-type Props = { delay?: 0 | 1 | 2 | 3 | 4; as?: keyof JSX.IntrinsicElements; className?: string; children: ReactNode };
+type Props = {
+  delay?: 0 | 1 | 2 | 3 | 4;
+  as?: keyof JSX.IntrinsicElements;
+  className?: string;
+  children: ReactNode;
+};
 
 export function RevealOnScroll({ delay = 0, as = "div", className = "", children }: Props) {
   const ref = useRef<HTMLElement | null>(null);
@@ -1651,9 +1972,18 @@ export function RevealOnScroll({ delay = 0, as = "div", className = "", children
     const el = ref.current;
     if (!el) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) { el.classList.add("in"); return; }
+    if (reduce) {
+      el.classList.add("in");
+      return;
+    }
     const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }),
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        }),
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
     io.observe(el);
@@ -1661,7 +1991,11 @@ export function RevealOnScroll({ delay = 0, as = "div", className = "", children
   }, []);
   const Tag = as as any;
   const dClass = delay ? ` d${delay}` : "";
-  return <Tag ref={ref as any} className={`reveal${dClass} ${className}`.trim()}>{children}</Tag>;
+  return (
+    <Tag ref={ref as any} className={`reveal${dClass} ${className}`.trim()}>
+      {children}
+    </Tag>
+  );
 }
 ```
 
@@ -1693,6 +2027,7 @@ npm test -- Chip && git add src/components/ui/ && git commit -m "feat(ui): Butto
 ### Tarea C5: Background canvas decorativo (client-only, respeta reduce-motion)
 
 **Files:**
+
 - Create: `src/components/NetworkCanvas/NetworkCanvas.tsx`
 
 - [ ] **Step 1: Crear componente**
@@ -1713,20 +2048,27 @@ export function NetworkCanvas() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let w = 0, h = 0, dpr = 1, raf = 0;
+    let w = 0,
+      h = 0,
+      dpr = 1,
+      raf = 0;
     type Node = { x: number; y: number; vx: number; vy: number; r: number };
     let nodes: Node[] = [];
     const mouse = { x: -9999, y: -9999 };
 
     const resize = () => {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = canvas.clientWidth; h = canvas.clientHeight;
-      canvas.width = w * dpr; canvas.height = h * dpr;
+      w = canvas.clientWidth;
+      h = canvas.clientHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       const count = Math.round((w * h) / 26_000);
       nodes = Array.from({ length: count }, () => ({
-        x: Math.random() * w, y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.28, vy: (Math.random() - 0.5) * 0.28,
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.28,
+        vy: (Math.random() - 0.5) * 0.28,
         r: Math.random() * 1.6 + 0.6,
       }));
     };
@@ -1736,41 +2078,60 @@ export function NetworkCanvas() {
       const maxD = 132;
       for (let i = 0; i < nodes.length; i++) {
         const a = nodes[i]!;
-        a.x += a.vx; a.y += a.vy;
+        a.x += a.vx;
+        a.y += a.vy;
         if (a.x < 0 || a.x > w) a.vx *= -1;
         if (a.y < 0 || a.y > h) a.vy *= -1;
-        const mdx = a.x - mouse.x, mdy = a.y - mouse.y, md = Math.hypot(mdx, mdy);
-        if (md < 120) { a.x += (mdx / md) * 0.6; a.y += (mdy / md) * 0.6; }
+        const mdx = a.x - mouse.x,
+          mdy = a.y - mouse.y,
+          md = Math.hypot(mdx, mdy);
+        if (md < 120) {
+          a.x += (mdx / md) * 0.6;
+          a.y += (mdy / md) * 0.6;
+        }
         for (let j = i + 1; j < nodes.length; j++) {
           const b = nodes[j]!;
-          const dx = a.x - b.x, dy = a.y - b.y, d = Math.hypot(dx, dy);
+          const dx = a.x - b.x,
+            dy = a.y - b.y,
+            d = Math.hypot(dx, dy);
           if (d < maxD) {
             const o = (1 - d / maxD) * 0.5;
             const grad = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
             grad.addColorStop(0, `rgba(59,130,246,${o})`);
             grad.addColorStop(1, `rgba(34,211,238,${o})`);
-            ctx.strokeStyle = grad; ctx.lineWidth = 0.7;
-            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = 0.7;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
           }
         }
       }
       for (const n of nodes) {
-        ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(96,165,250,0.7)"; ctx.fill();
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(96,165,250,0.7)";
+        ctx.fill();
       }
       raf = requestAnimationFrame(draw);
     };
 
     const onPointer = (e: PointerEvent) => {
       const r = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
     };
-    const onLeave = () => { mouse.x = -9999; mouse.y = -9999; };
+    const onLeave = () => {
+      mouse.x = -9999;
+      mouse.y = -9999;
+    };
 
     window.addEventListener("resize", resize);
     window.addEventListener("pointermove", onPointer);
     window.addEventListener("pointerleave", onLeave);
-    resize(); draw();
+    resize();
+    draw();
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
@@ -1792,11 +2153,12 @@ git add src/components/NetworkCanvas/ && git commit -m "feat(ui): NetworkCanvas 
 
 ## Fase D — Componentes de secciones + Home
 
-> **Patrón común a todas las tareas D*:** cada componente se construye en su carpeta con `Component.tsx` + `Component.module.css`. El CSS se porta literal del bloque correspondiente de `~/Documents/Claude/Projects/design_handoff_villadev_portfolio/design/assets/styles.css` (sólo las clases del componente; sin re-declarar tokens). Los textos se obtienen con `useTranslations` del namespace correspondiente (`getTranslations` en server components). Donde el prototipo usa `<strong>` dentro de cadenas, el componente usa `t.rich("key", { strong: (c) => <strong>{c}</strong> })`.
+> **Patrón común a todas las tareas D\*:** cada componente se construye en su carpeta con `Component.tsx` + `Component.module.css`. El CSS se porta literal del bloque correspondiente de `~/Documents/Claude/Projects/design_handoff_villadev_portfolio/design/assets/styles.css` (sólo las clases del componente; sin re-declarar tokens). Los textos se obtienen con `useTranslations` del namespace correspondiente (`getTranslations` en server components). Donde el prototipo usa `<strong>` dentro de cadenas, el componente usa `t.rich("key", { strong: (c) => <strong>{c}</strong> })`.
 
 ### Tarea D1: Navbar (server + client subcomponent)
 
 **Files:**
+
 - Create: `src/components/Navbar/Navbar.tsx`, `src/components/Navbar/Navbar.module.css`, `src/components/Navbar/LangSwitch.tsx`, `src/components/Navbar/MobileMenu.tsx`
 
 - [ ] **Step 1: `Navbar.module.css`** — portar `.nav`/`.nav-inner`/`.brand`/`.nav-links`/`.nav-right`/`.nav-toggle` y `.mobile-menu` de `styles.css` líneas 162-258 + 810-832.
@@ -1844,20 +2206,34 @@ export function MobileMenu() {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
   const items = [
-    ["services", "01"], ["about", "02"], ["projects", "03"],
-    ["experience", "04"], ["skills", "05"], ["contact", "06"],
+    ["services", "01"],
+    ["about", "02"],
+    ["projects", "03"],
+    ["experience", "04"],
+    ["skills", "05"],
+    ["contact", "06"],
   ] as const;
   return (
     <>
       <button className={styles.navToggle} aria-label="Menu" onClick={() => setOpen((v) => !v)}>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-          <line x1="3" y1="7" x2="21" y2="7" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="17" x2="21" y2="17" />
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <line x1="3" y1="7" x2="21" y2="7" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="17" x2="21" y2="17" />
         </svg>
       </button>
       <div className={`${styles.mobileMenu} ${open ? styles.open : ""}`}>
         {items.map(([k, n]) => (
           <Link key={k} href={`/#${k === "services" ? "services" : k}`} onClick={close}>
-            <span className={styles.n}>{n}</span><span>{t(k)}</span>
+            <span className={styles.n}>{n}</span>
+            <span>{t(k)}</span>
           </Link>
         ))}
       </div>
@@ -1892,21 +2268,35 @@ export function Navbar() {
     <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`wrap ${styles.navInner}`}>
         <Link href="/" className={styles.brand}>
-          <span className={styles.mark}><span>VD</span></span>
+          <span className={styles.mark}>
+            <span>VD</span>
+          </span>
           <span>VillaDev</span>
         </Link>
         <nav>
           <ul className={styles.navLinks}>
-            <li><Link href="/#services">{t("services")}</Link></li>
-            <li><Link href="/#about">{t("about")}</Link></li>
-            <li><Link href="/#projects">{t("projects")}</Link></li>
-            <li><Link href="/#experience">{t("experience")}</Link></li>
-            <li><Link href="/#skills">{t("skills")}</Link></li>
+            <li>
+              <Link href="/#services">{t("services")}</Link>
+            </li>
+            <li>
+              <Link href="/#about">{t("about")}</Link>
+            </li>
+            <li>
+              <Link href="/#projects">{t("projects")}</Link>
+            </li>
+            <li>
+              <Link href="/#experience">{t("experience")}</Link>
+            </li>
+            <li>
+              <Link href="/#skills">{t("skills")}</Link>
+            </li>
           </ul>
         </nav>
         <div className={styles.navRight}>
           <LangSwitch />
-          <Link href="/#contact" className="btn btn-primary">{t("cta")}</Link>
+          <Link href="/#contact" className="btn btn-primary">
+            {t("cta")}
+          </Link>
           <MobileMenu />
         </div>
       </div>
@@ -1926,6 +2316,7 @@ git add src/components/Navbar/ && git commit -m "feat(navbar): Navbar + LangSwit
 ### Tarea D2: Footer
 
 **Files:**
+
 - Create: `src/components/Footer/Footer.tsx`, `src/components/Footer/Footer.module.css`
 
 - [ ] **Step 1: CSS** — portar `.footer` y siguientes de `styles.css` líneas 773-792.
@@ -1946,8 +2337,12 @@ export async function Footer() {
         <div className={styles.footerTop}>
           <div>
             <Link href="/" className={styles.brand}>
-              <span className={styles.mark}><span>VD</span></span>
-              <span>VillaDev<small>SEC · DEV · AUTOMATION</small></span>
+              <span className={styles.mark}>
+                <span>VD</span>
+              </span>
+              <span>
+                VillaDev<small>SEC · DEV · AUTOMATION</small>
+              </span>
             </Link>
             <p className={styles.tagline}>{t("footer.tagline")}</p>
           </div>
@@ -1962,13 +2357,27 @@ export async function Footer() {
             <div className={styles.footerCol}>
               <h4>{t("footer.connect")}</h4>
               <a href="mailto:villacis.j@icloud.com">Email</a>
-              <a href="https://www.linkedin.com/in/jimmy-villacis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://villacisjimmy.github.io/blog/" target="_blank" rel="noopener noreferrer">Blog</a>
+              <a
+                href="https://www.linkedin.com/in/jimmy-villacis/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://villacisjimmy.github.io/blog/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Blog
+              </a>
             </div>
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <span>© {year} VillaDev · {t("footer.rights")}</span>
+          <span>
+            © {year} VillaDev · {t("footer.rights")}
+          </span>
           <span>{t("footer.built")}</span>
         </div>
       </div>
@@ -1988,6 +2397,7 @@ git add src/components/Footer/ && git commit -m "feat(footer): Footer with i18n 
 ### Tarea D3: Hero (server shell + client interactivos)
 
 **Files:**
+
 - Create: `src/components/Hero/Hero.tsx`, `src/components/Hero/Hero.module.css`, `src/components/Hero/Terminal.tsx`, `src/components/Hero/StatCounter.tsx`, `src/components/Hero/AvailabilityBadge.tsx`
 
 - [ ] **Step 1: CSS** — portar `.hero`/`.hero-grid`/`.badge-live`/`.hero-stats`/`.stat .num`/`.terminal`/`.term-bar`/`.term-body`/`.cursor` de `styles.css` líneas 283-399.
@@ -2027,22 +2437,35 @@ export function StatCounter({ target, suffix = "" }: { target: number; suffix?: 
     const el = ref.current;
     if (!el) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) { setValue(target); return; }
+    if (reduce) {
+      setValue(target);
+      return;
+    }
     const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        io.unobserve(el);
-        const step = Math.max(1, Math.round(target / 28));
-        let cur = 0;
-        const tick = () => { cur = Math.min(target, cur + step); setValue(cur); if (cur < target) requestAnimationFrame(tick); };
-        tick();
-      }),
+      (entries) =>
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          io.unobserve(el);
+          const step = Math.max(1, Math.round(target / 28));
+          let cur = 0;
+          const tick = () => {
+            cur = Math.min(target, cur + step);
+            setValue(cur);
+            if (cur < target) requestAnimationFrame(tick);
+          };
+          tick();
+        }),
       { threshold: 0.6 },
     );
     io.observe(el);
     return () => io.disconnect();
   }, [target]);
-  return <div ref={ref} className="num">{value}{suffix}</div>;
+  return (
+    <div ref={ref} className="num">
+      {value}
+      {suffix}
+    </div>
+  );
 }
 ```
 
@@ -2054,12 +2477,40 @@ import { useEffect, useRef } from "react";
 import styles from "./Hero.module.css";
 
 const LINES = [
-  { html: '<span class="prompt">villadev@sec</span>:<span class="path">~/proyecto</span>$ ', cmd: "init --secure-by-design", delay: 38 },
-  { html: '<span class="out">✓ entorno listo · dependencias auditadas</span>', cmd: "", delay: 12, instant: true },
-  { html: '<span class="prompt">villadev@sec</span>:<span class="path">~/proyecto</span>$ ', cmd: "deploy --fast", delay: 38 },
-  { html: '<span class="out">→ build <span class="key">1.8s</span> · tests <span class="ok">passing</span></span>', cmd: "", delay: 12, instant: true },
-  { html: '<span class="out">→ <span class="key">n8n</span> workflows conectados</span>', cmd: "", delay: 12, instant: true },
-  { html: '<span class="ok">✓ en producción · seguro &amp; veloz</span>', cmd: "", delay: 12, instant: true },
+  {
+    html: '<span class="prompt">villadev@sec</span>:<span class="path">~/proyecto</span>$ ',
+    cmd: "init --secure-by-design",
+    delay: 38,
+  },
+  {
+    html: '<span class="out">✓ entorno listo · dependencias auditadas</span>',
+    cmd: "",
+    delay: 12,
+    instant: true,
+  },
+  {
+    html: '<span class="prompt">villadev@sec</span>:<span class="path">~/proyecto</span>$ ',
+    cmd: "deploy --fast",
+    delay: 38,
+  },
+  {
+    html: '<span class="out">→ build <span class="key">1.8s</span> · tests <span class="ok">passing</span></span>',
+    cmd: "",
+    delay: 12,
+    instant: true,
+  },
+  {
+    html: '<span class="out">→ <span class="key">n8n</span> workflows conectados</span>',
+    cmd: "",
+    delay: 12,
+    instant: true,
+  },
+  {
+    html: '<span class="ok">✓ en producción · seguro &amp; veloz</span>',
+    cmd: "",
+    delay: 12,
+    instant: true,
+  },
 ] as const;
 
 export function Terminal() {
@@ -2074,29 +2525,53 @@ export function Terminal() {
         `<div class="${styles.termLine}"><span class="ok">✓ en producción · seguro &amp; veloz</span></div>`;
       return;
     }
-    let li = 0; let cancelled = false;
-    const make = () => { const el = document.createElement("div"); el.className = styles.termLine; term.appendChild(el); return el; };
+    let li = 0;
+    let cancelled = false;
+    const make = () => {
+      const el = document.createElement("div");
+      el.className = styles.termLine;
+      term.appendChild(el);
+      return el;
+    };
     const typeLine = () => {
       if (cancelled) return;
       if (li >= LINES.length) {
-        const cur = document.createElement("span"); cur.className = styles.cursor;
-        make().appendChild(cur); return;
+        const cur = document.createElement("span");
+        cur.className = styles.cursor;
+        make().appendChild(cur);
+        return;
       }
       const spec = LINES[li]!;
       const el = make();
       el.innerHTML = spec.html;
-      if (spec.instant || !spec.cmd) { li++; setTimeout(typeLine, 360); return; }
-      const cmdSpan = document.createElement("span"); cmdSpan.className = "cmd"; el.appendChild(cmdSpan);
+      if (spec.instant || !spec.cmd) {
+        li++;
+        setTimeout(typeLine, 360);
+        return;
+      }
+      const cmdSpan = document.createElement("span");
+      cmdSpan.className = "cmd";
+      el.appendChild(cmdSpan);
       let ci = 0;
       const typeChar = () => {
         if (cancelled) return;
-        if (ci <= spec.cmd.length) { cmdSpan.textContent = spec.cmd.slice(0, ci); ci++; setTimeout(typeChar, spec.delay); }
-        else { li++; setTimeout(typeLine, 420); }
+        if (ci <= spec.cmd.length) {
+          cmdSpan.textContent = spec.cmd.slice(0, ci);
+          ci++;
+          setTimeout(typeChar, spec.delay);
+        } else {
+          li++;
+          setTimeout(typeLine, 420);
+        }
       };
       typeChar();
     };
     const t = setTimeout(typeLine, 700);
-    return () => { cancelled = true; clearTimeout(t); term.innerHTML = ""; };
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+      term.innerHTML = "";
+    };
   }, []);
   return <div ref={ref} className={styles.termBody} id="term-body" />;
 }
@@ -2121,25 +2596,39 @@ export async function Hero() {
     <section className={styles.hero} data-screen-label="Hero">
       <div className={`wrap ${styles.heroGrid}`}>
         <div className={styles.heroCopy}>
-          <RevealOnScroll><AvailabilityBadge /></RevealOnScroll>
+          <RevealOnScroll>
+            <AvailabilityBadge />
+          </RevealOnScroll>
           <RevealOnScroll as="h1" delay={1} className={styles.heroH1}>
-            <span>{t("h1a")}</span>{" "}
-            <span className="gradient-text">{t("h1b")}</span>
+            <span>{t("h1a")}</span> <span className="gradient-text">{t("h1b")}</span>
           </RevealOnScroll>
           <RevealOnScroll delay={2}>
             <p className={styles.lead}>{t.rich("lead", { strong: (c) => <strong>{c}</strong> })}</p>
           </RevealOnScroll>
           <RevealOnScroll delay={3}>
             <div className={styles.heroCta}>
-              <Link href="/#services" className="btn btn-primary">{t("cta1")}</Link>
-              <Link href="/#contact" className="btn btn-ghost">{t("cta2")} ↗</Link>
+              <Link href="/#services" className="btn btn-primary">
+                {t("cta1")}
+              </Link>
+              <Link href="/#contact" className="btn btn-ghost">
+                {t("cta2")} ↗
+              </Link>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={4}>
             <div className={styles.heroStats}>
-              <div className={styles.stat}><StatCounter target={8} suffix="+" /><div className={styles.label}>{t("stat1.l")}</div></div>
-              <div className={styles.stat}><StatCounter target={12} suffix="+" /><div className={styles.label}>{t("stat2.l")}</div></div>
-              <div className={styles.stat}><div className="num">CCNA</div><div className={styles.label}>{t("stat3.l")}</div></div>
+              <div className={styles.stat}>
+                <StatCounter target={8} suffix="+" />
+                <div className={styles.label}>{t("stat1.l")}</div>
+              </div>
+              <div className={styles.stat}>
+                <StatCounter target={12} suffix="+" />
+                <div className={styles.label}>{t("stat2.l")}</div>
+              </div>
+              <div className={styles.stat}>
+                <div className="num">CCNA</div>
+                <div className={styles.label}>{t("stat3.l")}</div>
+              </div>
             </div>
           </RevealOnScroll>
         </div>
@@ -2171,6 +2660,7 @@ git add src/components/Hero/ && git commit -m "feat(hero): Hero with availabilit
 ### Tarea D4: Services (con glow pointermove)
 
 **Files:**
+
 - Create: `src/components/Services/Services.tsx`, `src/components/Services/Services.module.css`, `src/components/Services/ServiceCard.tsx`, `src/components/Services/icons.tsx`
 
 - [ ] **Step 1: CSS** — portar `.services-grid`/`.service`/`.service::before`/`.service .ico`/`.service .tags` de `styles.css` líneas 401-452.
@@ -2200,11 +2690,15 @@ export function ServiceCard({ service }: { service: Service }) {
   return (
     <article ref={ref} className={styles.service} onPointerMove={onMove}>
       <span className={styles.idx}>{service.index}</span>
-      <div className={styles.ico}><Icon /></div>
+      <div className={styles.ico}>
+        <Icon />
+      </div>
       <h3>{t(service.titleKey)}</h3>
       <p>{t(service.descKey)}</p>
       <div className={styles.tags}>
-        {service.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}
+        {service.tags.map((tag) => (
+          <Chip key={tag}>{tag}</Chip>
+        ))}
       </div>
     </article>
   );
@@ -2255,6 +2749,7 @@ git add src/components/Services/ && git commit -m "feat(services): Services sect
 ### Tarea D5: About (foto neon, scan line, esquinas, facts)
 
 **Files:**
+
 - Create: `src/components/About/About.tsx`, `src/components/About/About.module.css`
 - Move: `~/Documents/Claude/Projects/design_handoff_villadev_portfolio/design/assets/profile.jpeg` → `public/profile.jpeg`
 
@@ -2283,7 +2778,14 @@ export async function About() {
       <div className={`wrap ${styles.aboutGrid}`}>
         <RevealOnScroll className={styles.aboutPhoto}>
           <div className={styles.frame}>
-            <Image src="/profile.jpeg" alt="Jimmy Villacis" width={460} height={575} className={styles.profileImg} priority />
+            <Image
+              src="/profile.jpeg"
+              alt="Jimmy Villacis"
+              width={460}
+              height={575}
+              className={styles.profileImg}
+              priority
+            />
             <div className={styles.scan} />
             <span className={`${styles.corner} ${styles.c1}`} />
             <span className={`${styles.corner} ${styles.c2}`} />
@@ -2322,6 +2824,7 @@ git add public/profile.jpeg src/components/About/ && git commit -m "feat(about):
 ### Tarea D6: ProjectCard reutilizable
 
 **Files:**
+
 - Create: `src/components/Projects/ProjectCard.tsx`, `src/components/Projects/Projects.module.css`
 
 - [ ] **Step 1: CSS** — portar `.proj-grid`/`.proj`/`.proj .thumb`/`.proj .dots`/`.proj .glyph`/`.proj .body`/`.proj .status`/`.proj .link`/`.proj-viewall`/`.proj.hide`/`.proj-filter` de `styles.css` líneas 521-607.
@@ -2352,11 +2855,19 @@ export function ProjectCard({ project }: { project: Project }) {
         <div className={styles.glyph}>{project.glyph}</div>
       </div>
       <div className={styles.body}>
-        <span className={styles.status}><span className={styles.dotMark}>●</span> {t(project.statusKey)}</span>
+        <span className={styles.status}>
+          <span className={styles.dotMark}>●</span> {t(project.statusKey)}
+        </span>
         <h3>{t(project.titleKey)}</h3>
         <p>{t(project.descKey)}</p>
-        <div className={styles.tags}>{project.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}</div>
-        <span className={styles.link}>{t(project.linkKey)} {project.url ? "↗" : ""}</span>
+        <div className={styles.tags}>
+          {project.tags.map((tag) => (
+            <Chip key={tag}>{tag}</Chip>
+          ))}
+        </div>
+        <span className={styles.link}>
+          {t(project.linkKey)} {project.url ? "↗" : ""}
+        </span>
       </div>
     </Wrapper>
   );
@@ -2374,6 +2885,7 @@ git add src/components/Projects/ && git commit -m "feat(projects): ProjectCard +
 ### Tarea D7: ProjectsSection (home, sólo featured)
 
 **Files:**
+
 - Create: `src/components/Projects/ProjectsSection.tsx`
 
 - [ ] **Step 1: Component (server)**
@@ -2406,7 +2918,9 @@ export async function ProjectsSection() {
           ))}
         </div>
         <RevealOnScroll className={styles.projViewall}>
-          <Link href="/proyectos" className="btn btn-ghost">{t("viewall")} ↗</Link>
+          <Link href="/proyectos" className="btn btn-ghost">
+            {t("viewall")} ↗
+          </Link>
         </RevealOnScroll>
       </div>
     </section>
@@ -2425,6 +2939,7 @@ git add src/components/Projects/ProjectsSection.tsx && git commit -m "feat(proje
 ### Tarea D8: Experience (timeline)
 
 **Files:**
+
 - Create: `src/components/Experience/Experience.tsx`, `src/components/Experience/Experience.module.css`
 
 - [ ] **Step 1: CSS** — portar `.timeline`/`.tl-item`/`.tl-item .node`/`.tl-item.now .node`/`.tl-head`/`.tl-when` de `styles.css` líneas 612-635.
@@ -2450,7 +2965,10 @@ export async function Experience() {
         </RevealOnScroll>
         <div className={styles.timeline}>
           {experience.map((item) => (
-            <RevealOnScroll key={item.id} className={`${styles.tlItem} ${item.current ? styles.now : ""}`}>
+            <RevealOnScroll
+              key={item.id}
+              className={`${styles.tlItem} ${item.current ? styles.now : ""}`}
+            >
               <span className={styles.node} />
               <div className={styles.tlHead}>
                 <h3>{t(item.roleKey)}</h3>
@@ -2459,7 +2977,9 @@ export async function Experience() {
               </div>
               <p>{t(item.descKey)}</p>
               <div className={styles.chips}>
-                {item.chips.map((c) => <span key={c}>{c}</span>)}
+                {item.chips.map((c) => (
+                  <span key={c}>{c}</span>
+                ))}
               </div>
             </RevealOnScroll>
           ))}
@@ -2481,6 +3001,7 @@ git add src/components/Experience/ && git commit -m "feat(experience): vertical 
 ### Tarea D9: Certifications
 
 **Files:**
+
 - Create: `src/components/Certifications/Certifications.tsx`, `src/components/Certifications/Certifications.module.css`
 
 - [ ] **Step 1: CSS** — portar `.cert-grid`/`.cert`/`.cert .yr`/`.cert .yr.live`/`.cert .info .name`/`.cert .info .iss` de `styles.css` líneas 640-667.
@@ -2532,6 +3053,7 @@ git add src/components/Certifications/ && git commit -m "feat(certs): Certificat
 ### Tarea D10: Skills
 
 **Files:**
+
 - Create: `src/components/Skills/Skills.tsx`, `src/components/Skills/Skills.module.css`
 
 - [ ] **Step 1: CSS** — portar `.skills-grid`/`.skill-cat`/`.skill-cat .ch`/`.skill-desc` de `styles.css` líneas 672-701.
@@ -2558,7 +3080,10 @@ export async function Skills() {
         <div className={styles.skillsGrid}>
           {skillCategories.map((s, i) => (
             <RevealOnScroll key={s.id} delay={(i % 3) as 0 | 1 | 2} className={styles.skillCat}>
-              <div className={styles.ch}><span>{t(s.labelKey)}</span><span className={styles.ln} /></div>
+              <div className={styles.ch}>
+                <span>{t(s.labelKey)}</span>
+                <span className={styles.ln} />
+              </div>
               <p className={styles.skillDesc}>{t(s.descKey)}</p>
             </RevealOnScroll>
           ))}
@@ -2580,6 +3105,7 @@ git add src/components/Skills/ && git commit -m "feat(skills): Skills section"
 ### Tarea D11: Página Home (ensamblar todas las secciones)
 
 **Files:**
+
 - Create: `src/app/[locale]/(public)/page.tsx`, `src/app/[locale]/(public)/layout.tsx`
 
 - [ ] **Step 1: `(public)/layout.tsx`** — incluye Navbar, NetworkCanvas y Footer alrededor de los children.
@@ -2594,7 +3120,9 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
     <>
       <NetworkCanvas />
       <Navbar />
-      <main className="shell" id="top">{children}</main>
+      <main className="shell" id="top">
+        {children}
+      </main>
       <Footer />
     </>
   );
@@ -2656,6 +3184,7 @@ git add src/app/ && git commit -m "feat(home): assemble Home page with all secti
 ### Tarea E1: ProjectsFilter (client) + página catálogo
 
 **Files:**
+
 - Create: `src/components/Projects/ProjectsFilter.tsx`, `src/app/[locale]/(public)/proyectos/page.tsx`
 
 - [ ] **Step 1: `ProjectsFilter.tsx`** — botones que reescriben `?cat=`
@@ -2709,7 +3238,8 @@ type SP = { cat?: string };
 const VALID: readonly ProjectCategory[] = ["web", "auto", "sec"];
 
 export default async function ProyectosPage({
-  params, searchParams,
+  params,
+  searchParams,
 }: {
   params: Promise<{ locale: Locale }>;
   searchParams: Promise<SP>;
@@ -2718,12 +3248,16 @@ export default async function ProyectosPage({
   const { cat } = await searchParams;
   setRequestLocale(locale);
   const t = await getTranslations("projpage");
-  const active = (cat && (VALID as readonly string[]).includes(cat) ? cat : "all") as ProjectCategory | "all";
+  const active = (cat && (VALID as readonly string[]).includes(cat) ? cat : "all") as
+    | ProjectCategory
+    | "all";
   const filtered = active === "all" ? projects : projects.filter((p) => p.category === active);
   return (
     <section className="section page-head">
       <div className="wrap">
-        <Link href="/" className={`${styles.back}`}>← {t("back")}</Link>
+        <Link href="/" className={`${styles.back}`}>
+          ← {t("back")}
+        </Link>
         <div className="section-head">
           <Eyebrow>{t("eyebrow")}</Eyebrow>
           <h2>{t("h2")}</h2>
@@ -2731,7 +3265,9 @@ export default async function ProyectosPage({
         </div>
         <ProjectsFilter />
         <div className={`${styles.projGrid} ${styles.all}`}>
-          {filtered.map((p) => <ProjectCard key={p.id} project={p} />)}
+          {filtered.map((p) => (
+            <ProjectCard key={p.id} project={p} />
+          ))}
         </div>
       </div>
     </section>
@@ -2760,6 +3296,7 @@ git add src/app/ src/components/Projects/ProjectsFilter.tsx && git commit -m "fe
 ### Tarea E2: E2E test del filtro
 
 **Files:**
+
 - Create: `tests/e2e/catalog.spec.ts`
 
 - [ ] **Step 1: Test**
@@ -2769,15 +3306,15 @@ import { test, expect } from "@playwright/test";
 
 test("catalog filters by category via query param", async ({ page }) => {
   await page.goto("/es/proyectos");
-  await expect(page.locator('[data-cat]')).toHaveCount(3);
+  await expect(page.locator("[data-cat]")).toHaveCount(3);
 
   await page.getByRole("button", { name: "Automatización" }).click();
   await expect(page).toHaveURL(/cat=auto/);
-  await expect(page.locator('[data-cat]')).toHaveCount(1);
+  await expect(page.locator("[data-cat]")).toHaveCount(1);
 
   await page.getByRole("button", { name: "Todos" }).click();
   await expect(page).toHaveURL(/\/proyectos$/);
-  await expect(page.locator('[data-cat]')).toHaveCount(3);
+  await expect(page.locator("[data-cat]")).toHaveCount(3);
 });
 ```
 
@@ -2800,6 +3337,7 @@ git add tests/e2e/catalog.spec.ts && git commit -m "test(e2e): catalog filter by
 ### Tarea F1: Schema Zod del contacto (TDD)
 
 **Files:**
+
 - Create: `src/lib/schemas/contact.ts`, `src/lib/schemas/contact.test.ts`
 
 - [ ] **Step 1: Test failing**
@@ -2809,18 +3347,35 @@ import { describe, it, expect } from "vitest";
 import { ContactSchema } from "./contact";
 
 describe("ContactSchema", () => {
-  const ok = { name: "Jimmy", email: "a@b.cl", subject: "proyecto", message: "Hola, me interesa ya mismo, gracias!" };
+  const ok = {
+    name: "Jimmy",
+    email: "a@b.cl",
+    subject: "proyecto",
+    message: "Hola, me interesa ya mismo, gracias!",
+  };
 
   it("accepts valid input", () => {
     const r = ContactSchema.safeParse(ok);
     expect(r.success).toBe(true);
   });
-  it("rejects short name", () => { expect(ContactSchema.safeParse({ ...ok, name: "a" }).success).toBe(false); });
-  it("rejects bad email", () => { expect(ContactSchema.safeParse({ ...ok, email: "nope" }).success).toBe(false); });
-  it("rejects unknown subject", () => { expect(ContactSchema.safeParse({ ...ok, subject: "spam" }).success).toBe(false); });
-  it("rejects short message", () => { expect(ContactSchema.safeParse({ ...ok, message: "short" }).success).toBe(false); });
-  it("rejects honeypot with value", () => { expect(ContactSchema.safeParse({ ...ok, hp: "im a bot" }).success).toBe(false); });
-  it("accepts empty honeypot", () => { expect(ContactSchema.safeParse({ ...ok, hp: "" }).success).toBe(true); });
+  it("rejects short name", () => {
+    expect(ContactSchema.safeParse({ ...ok, name: "a" }).success).toBe(false);
+  });
+  it("rejects bad email", () => {
+    expect(ContactSchema.safeParse({ ...ok, email: "nope" }).success).toBe(false);
+  });
+  it("rejects unknown subject", () => {
+    expect(ContactSchema.safeParse({ ...ok, subject: "spam" }).success).toBe(false);
+  });
+  it("rejects short message", () => {
+    expect(ContactSchema.safeParse({ ...ok, message: "short" }).success).toBe(false);
+  });
+  it("rejects honeypot with value", () => {
+    expect(ContactSchema.safeParse({ ...ok, hp: "im a bot" }).success).toBe(false);
+  });
+  it("accepts empty honeypot", () => {
+    expect(ContactSchema.safeParse({ ...ok, hp: "" }).success).toBe(true);
+  });
 });
 ```
 
@@ -2852,6 +3407,7 @@ git add src/lib/schemas/contact.ts src/lib/schemas/contact.test.ts && git commit
 ### Tarea F2: Cliente Resend (TDD con mock)
 
 **Files:**
+
 - Create: `src/lib/email/resend.ts`, `src/lib/email/resend.test.ts`
 
 - [ ] **Step 1: Instalar Resend SDK**
@@ -2884,7 +3440,9 @@ describe("sendContactEmail", () => {
   it("calls Resend with sanitized fields", async () => {
     sendMock.mockResolvedValue({ data: { id: "x" }, error: null });
     const r = await sendContactEmail({
-      name: "  Jimmy  ", email: "a@b.cl", subject: "proyecto",
+      name: "  Jimmy  ",
+      email: "a@b.cl",
+      subject: "proyecto",
       message: "Hola, necesito una app web con login.",
     });
     expect(r.ok).toBe(true);
@@ -2898,7 +3456,10 @@ describe("sendContactEmail", () => {
   it("returns ok=false on provider error", async () => {
     sendMock.mockResolvedValue({ data: null, error: { name: "x", message: "boom" } });
     const r = await sendContactEmail({
-      name: "Jimmy", email: "a@b.cl", subject: "otro", message: "x".repeat(30),
+      name: "Jimmy",
+      email: "a@b.cl",
+      subject: "otro",
+      message: "x".repeat(30),
     });
     expect(r.ok).toBe(false);
   });
@@ -2930,8 +3491,11 @@ const SUBJECT_LABEL: Record<ContactInput["subject"], string> = {
 
 function escapeHtml(s: string): string {
   return s
-    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 export async function sendContactEmail(input: ContactInput): Promise<{ ok: boolean }> {
@@ -2953,7 +3517,10 @@ export async function sendContactEmail(input: ContactInput): Promise<{ ok: boole
     subject: subj,
     html,
   });
-  if (error) { logger.error({ err: error.message }, "resend send failed"); return { ok: false }; }
+  if (error) {
+    logger.error({ err: error.message }, "resend send failed");
+    return { ok: false };
+  }
   return { ok: true };
 }
 ```
@@ -2970,6 +3537,7 @@ git add src/lib/email/ package.json package-lock.json && git commit -m "feat(ema
 ### Tarea F3: Server Action de contacto (TDD)
 
 **Files:**
+
 - Create: `src/server-actions/contact.ts`, `src/server-actions/contact.test.ts`
 
 - [ ] **Step 1: Test (mocks de rate-limit + sendContactEmail)**
@@ -2979,7 +3547,9 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 
 vi.mock("@/lib/email/resend", () => ({ sendContactEmail: vi.fn() }));
 vi.mock("next/headers", () => ({
-  headers: vi.fn(() => ({ get: (k: string) => k.toLowerCase() === "x-forwarded-for" ? "1.2.3.4" : null })),
+  headers: vi.fn(() => ({
+    get: (k: string) => (k.toLowerCase() === "x-forwarded-for" ? "1.2.3.4" : null),
+  })),
 }));
 
 import { sendContactEmail } from "@/lib/email/resend";
@@ -2991,7 +3561,12 @@ const fd = (data: Record<string, string>) => {
   return f;
 };
 
-const valid = { name: "Jimmy", email: "a@b.cl", subject: "proyecto", message: "Hola, esto es un mensaje suficientemente largo." };
+const valid = {
+  name: "Jimmy",
+  email: "a@b.cl",
+  subject: "proyecto",
+  message: "Hola, esto es un mensaje suficientemente largo.",
+};
 
 describe("submitContact", () => {
   beforeEach(() => {
@@ -3057,9 +3632,16 @@ export function __resetRateLimitForTests() {
 
 export type ContactState =
   | { ok: true }
-  | { ok: false; error: "validation" | "rate_limit" | "internal"; fields?: Record<string, string[]> };
+  | {
+      ok: false;
+      error: "validation" | "rate_limit" | "internal";
+      fields?: Record<string, string[]>;
+    };
 
-export async function submitContact(_prev: ContactState | undefined, formData: FormData): Promise<ContactState> {
+export async function submitContact(
+  _prev: ContactState | undefined,
+  formData: FormData,
+): Promise<ContactState> {
   const raw = Object.fromEntries(formData.entries());
   const parsed = ContactSchema.safeParse(raw);
   if (!parsed.success) {
@@ -3091,6 +3673,7 @@ git add src/server-actions/ && git commit -m "feat(actions): submitContact serve
 ### Tarea F4: UI del formulario de contacto
 
 **Files:**
+
 - Create: `src/components/Contact/Contact.tsx`, `src/components/Contact/ContactForm.tsx`, `src/components/Contact/Contact.module.css`
 
 - [ ] **Step 1: CSS** — portar `.contact-grid`/`.contact-body`/`.contact-list`/`.form-card`/`.field`/`.form-note` de `styles.css` líneas 706-768.
@@ -3119,17 +3702,41 @@ function Submit() {
 
 export function ContactForm() {
   const t = useTranslations("form");
-  const [state, action] = useActionState<ContactState | undefined, FormData>(submitContact, undefined);
+  const [state, action] = useActionState<ContactState | undefined, FormData>(
+    submitContact,
+    undefined,
+  );
   return (
     <form className={styles.formCard} action={action} noValidate>
-      <input type="text" name="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }} />
+      <input
+        type="text"
+        name="hp"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
+      />
       <div className={styles.field}>
         <label htmlFor="c-name">{t("name")}</label>
-        <input id="c-name" name="name" required minLength={2} maxLength={80} placeholder={t("namePh")} />
+        <input
+          id="c-name"
+          name="name"
+          required
+          minLength={2}
+          maxLength={80}
+          placeholder={t("namePh")}
+        />
       </div>
       <div className={styles.field}>
         <label htmlFor="c-email">{t("email")}</label>
-        <input id="c-email" name="email" type="email" required maxLength={120} placeholder={t("emailPh")} />
+        <input
+          id="c-email"
+          name="email"
+          type="email"
+          required
+          maxLength={120}
+          placeholder={t("emailPh")}
+        />
       </div>
       <div className={styles.field}>
         <label htmlFor="c-subject">{t("subject")}</label>
@@ -3142,13 +3749,37 @@ export function ContactForm() {
       </div>
       <div className={styles.field}>
         <label htmlFor="c-message">{t("message")}</label>
-        <textarea id="c-message" name="message" rows={4} required minLength={20} maxLength={2000} placeholder={t("messagePh")} />
+        <textarea
+          id="c-message"
+          name="message"
+          rows={4}
+          required
+          minLength={20}
+          maxLength={2000}
+          placeholder={t("messagePh")}
+        />
       </div>
       <Submit />
-      {state?.ok === true && <div className={styles.formNote} role="status">{t("states.success")}</div>}
-      {state?.ok === false && state.error === "rate_limit" && <div className={styles.formNote} role="alert">{t("states.rateLimit")}</div>}
-      {state?.ok === false && state.error === "validation" && <div className={styles.formNote} role="alert">{t("states.validation")}</div>}
-      {state?.ok === false && state.error === "internal" && <div className={styles.formNote} role="alert">{t("states.error")}</div>}
+      {state?.ok === true && (
+        <div className={styles.formNote} role="status">
+          {t("states.success")}
+        </div>
+      )}
+      {state?.ok === false && state.error === "rate_limit" && (
+        <div className={styles.formNote} role="alert">
+          {t("states.rateLimit")}
+        </div>
+      )}
+      {state?.ok === false && state.error === "validation" && (
+        <div className={styles.formNote} role="alert">
+          {t("states.validation")}
+        </div>
+      )}
+      {state?.ok === false && state.error === "internal" && (
+        <div className={styles.formNote} role="alert">
+          {t("states.error")}
+        </div>
+      )}
     </form>
   );
 }
@@ -3173,12 +3804,31 @@ export async function Contact() {
           <h2>{t("h2")}</h2>
           <p>{t("p")}</p>
           <div className={styles.contactList}>
-            <a href="mailto:villacis.j@icloud.com"><span className={styles.cl}>Correo</span><span className={styles.cv}>villacis.j@icloud.com</span></a>
-            <a href="https://www.linkedin.com/in/jimmy-villacis/" target="_blank" rel="noopener noreferrer"><span className={styles.cl}>LinkedIn</span><span className={styles.cv}>in/jimmy-villacis</span></a>
-            <a href="https://villacisjimmy.github.io/blog/" target="_blank" rel="noopener noreferrer"><span className={styles.cl}>Blog</span><span className={styles.cv}>villacisjimmy.github.io</span></a>
+            <a href="mailto:villacis.j@icloud.com">
+              <span className={styles.cl}>Correo</span>
+              <span className={styles.cv}>villacis.j@icloud.com</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jimmy-villacis/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={styles.cl}>LinkedIn</span>
+              <span className={styles.cv}>in/jimmy-villacis</span>
+            </a>
+            <a
+              href="https://villacisjimmy.github.io/blog/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={styles.cl}>Blog</span>
+              <span className={styles.cv}>villacisjimmy.github.io</span>
+            </a>
           </div>
         </RevealOnScroll>
-        <RevealOnScroll delay={1}><ContactForm /></RevealOnScroll>
+        <RevealOnScroll delay={1}>
+          <ContactForm />
+        </RevealOnScroll>
       </div>
     </section>
   );
@@ -3227,21 +3877,26 @@ git add src/components/Contact/ src/app/ && git commit -m "feat(contact): Contac
 - [ ] **Step 4: Pegar la key en `.env` LOCAL (no en el repo, no en chat)**
 
   En tu equipo (no enviar a Claude):
+
   ```bash
   cp .env.example .env
   $EDITOR .env
   ```
+
   Reemplazar `RESEND_API_KEY=re_REPLACE_ME` por el valor real. También fijar `CONTACT_FROM_EMAIL=contacto@<tu-dominio>` (debe ser del dominio verificado).
 
   Permisos:
+
   ```bash
   chmod 600 .env
   ```
 
 - [ ] **Step 5: Smoke local del envío real**
+
   ```bash
   npm run dev
   ```
+
   Llenar el form y enviar. Verificar que llega a `CONTACT_TO_EMAIL`. Si no llega:
   - Revisar el dashboard de Resend → Logs.
   - Confirmar que el dominio está verificado.
@@ -3259,6 +3914,7 @@ git add src/components/Contact/ src/app/ && git commit -m "feat(contact): Contac
 ### Tarea F6: E2E del formulario de contacto
 
 **Files:**
+
 - Create: `tests/e2e/contact.spec.ts`
 
 - [ ] **Step 1: Test**
@@ -3272,7 +3928,10 @@ test.describe("contact form", () => {
     await page.locator("[name=hp]").fill("bot");
     await page.fill("[name=name]", "Jimmy");
     await page.fill("[name=email]", "test@example.com");
-    await page.fill("[name=message]", "Hola, este es un mensaje suficientemente largo para pasar Zod.");
+    await page.fill(
+      "[name=message]",
+      "Hola, este es un mensaje suficientemente largo para pasar Zod.",
+    );
     await page.getByRole("button", { name: /enviar/i }).click();
     await expect(page.getByRole("alert")).toBeVisible();
   });
@@ -3311,6 +3970,7 @@ git add tests/e2e/contact.spec.ts && git commit -m "test(e2e): contact form hone
 ### Tarea G1: `/api/health`
 
 **Files:**
+
 - Create: `src/app/api/health/route.ts`
 
 - [ ] **Step 1: Implementar**
@@ -3348,6 +4008,7 @@ git add src/app/api/ && git commit -m "feat(api): /api/health endpoint"
 ### Tarea G2: Smoke E2E end-to-end + screenshot comparison manual
 
 **Files:**
+
 - Create: `tests/e2e/home.spec.ts`
 
 - [ ] **Step 1: Test**
@@ -3405,6 +4066,7 @@ git add tests/e2e/home.spec.ts && git commit -m "test(e2e): home sections + lang
 ### Tarea H1: Dockerfile multi-stage no-root
 
 **Files:**
+
 - Create: `Dockerfile`, `.dockerignore`
 
 - [ ] **Step 1: `.dockerignore`**
@@ -3491,6 +4153,7 @@ docker run --rm -p 3001:3000 \
 ```
 
 En otra terminal:
+
 ```bash
 curl -s http://127.0.0.1:3001/api/health
 ```
@@ -3508,6 +4171,7 @@ git add Dockerfile .dockerignore && git commit -m "feat(docker): multi-stage non
 ### Tarea H2: `compose.yaml` local + healthcheck
 
 **Files:**
+
 - Create: `compose.yaml`
 
 - [ ] **Step 1: `compose.yaml`** (sólo para desarrollo/staging local — la versión productiva vive en `deploy/compose.prod.yaml` en J5)
@@ -3591,6 +4255,7 @@ Esperado: todos los E2E pasan contra el binario containerizado (paridad con `nex
 ### Tarea I1: Workflow de CI (lint, typecheck, tests, security)
 
 **Files:**
+
 - Create: `.github/workflows/ci.yml`
 
 - [ ] **Step 1: `ci.yml`**
@@ -3695,6 +4360,7 @@ git add .github/ && git commit -m "ci: add CI workflow (lint, typecheck, tests, 
 ### Tarea I2: Workflow de CD (build, push GHCR, deploy SSH)
 
 **Files:**
+
 - Create: `.github/workflows/cd.yml`
 
 - [ ] **Step 1: `cd.yml`**
@@ -3814,11 +4480,11 @@ gh repo create villadev-portfolio --private --source . --remote origin --push
 
 En tu navegador: `https://github.com/<USER>/villadev-portfolio/settings/secrets/actions → New repository secret`. Crear estos 4:
 
-| Nombre | Valor |
-|---|---|
-| `VPS_HOST` | IP pública del VPS Hostinger |
-| `VPS_USER` | `villadev` |
-| `VPS_PORT` | el puerto SSH no-estándar elegido en J2 |
+| Nombre        | Valor                                                                                                                                |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `VPS_HOST`    | IP pública del VPS Hostinger                                                                                                         |
+| `VPS_USER`    | `villadev`                                                                                                                           |
+| `VPS_PORT`    | el puerto SSH no-estándar elegido en J2                                                                                              |
 | `VPS_SSH_KEY` | contenido COMPLETO de `~/.ssh/villadev_deploy` (incluye `-----BEGIN OPENSSH PRIVATE KEY-----` y `-----END OPENSSH PRIVATE KEY-----`) |
 
 > **No pegar estos valores en chat.** Sólo en la pestaña de Secrets de GitHub.
@@ -3870,6 +4536,7 @@ timedatectl set-timezone UTC
 ### Tarea J2: Bootstrap script idempotente (crear usuario, SSH, UFW, fail2ban, Docker, Nginx, Postgres)
 
 **Files:**
+
 - Create: `deploy/host/bootstrap.sh`
 
 - [ ] **Step 1: Crear el script**
@@ -3997,6 +4664,7 @@ echo "==> done. Reboot recommended if kernel updated."
 - [ ] **Step 2: Subir el script al VPS y ejecutarlo**
 
 Desde tu equipo:
+
 ```bash
 scp -P 22 deploy/host/bootstrap.sh root@<VPS_IP>:/root/
 ssh root@<VPS_IP>
@@ -4012,6 +4680,7 @@ cat ~/villadev_deploy.pub >> /home/villadev/.ssh/authorized_keys
 ```
 
 Desde tu equipo:
+
 ```bash
 ssh -p <PUERTO_ELEGIDO> -i ~/.ssh/villadev_deploy villadev@<VPS_IP>
 ```
@@ -4029,6 +4698,7 @@ git add deploy/host/bootstrap.sh && git commit -m "infra: idempotent VPS bootstr
 ### Tarea J3: Configuración Nginx para `villadev.<tld>`
 
 **Files:**
+
 - Create: `deploy/nginx/villadev.conf.example`
 
 - [ ] **Step 1: Crear template**
@@ -4164,6 +4834,7 @@ git add deploy/nginx/ && git commit -m "infra(nginx): vhost template for villade
 - [ ] **Step 2: Instalar Certbot + plugin DNS según provider**
 
 Si usas **Cloudflare**:
+
 ```bash
 ssh -p <PUERTO> -i ~/.ssh/villadev_deploy villadev@<VPS_IP>
 sudo apt-get install -y certbot python3-certbot-dns-cloudflare
@@ -4172,10 +4843,11 @@ sudo apt-get install -y certbot python3-certbot-dns-cloudflare
 - [ ] **Step 3: Crear API token de Cloudflare con permisos mínimos**
 
 En `https://dash.cloudflare.com/profile/api-tokens → Create Token → Custom token`:
+
 - Permissions: `Zone — DNS — Edit` para tu zona.
 - Zone Resources: `Include — Specific zone — villadev.<tld>`.
 - TTL: 1 año (renovable).
-Copiar el token.
+  Copiar el token.
 
 - [ ] **Step 4: Crear el archivo de credenciales en el VPS (no enviar a Claude)**
 
@@ -4214,9 +4886,11 @@ sudo nginx -t && sudo systemctl reload nginx
 ```
 
 Verificar (desde fuera):
+
 ```bash
 curl -sI https://villadev.<tld>/api/health
 ```
+
 Esperado: 502 todavía (no hay app levantada aún), pero TLS válido (sin warnings de cert).
 
 ---
@@ -4224,6 +4898,7 @@ Esperado: 502 todavía (no hay app levantada aún), pero TLS válido (sin warnin
 ### Tarea J5: `deploy/compose.prod.yaml` y `deploy.sh` en el VPS
 
 **Files:**
+
 - Create: `deploy/compose.prod.yaml`, `deploy/deploy.sh`
 
 - [ ] **Step 1: `deploy/compose.prod.yaml`**
@@ -4307,6 +4982,7 @@ echo "deploy ${TAG} done"
 - [ ] **Step 3: Subir al VPS y dejarlos en `/srv/villadev/`**
 
 Desde tu equipo:
+
 ```bash
 scp -P <PUERTO> -i ~/.ssh/villadev_deploy \
   deploy/compose.prod.yaml deploy/deploy.sh \
@@ -4387,17 +5063,20 @@ Esperado: ambos `-rw------- villadev villadev`.
 - [ ] **Step 1: Pull manual + up**
 
 En el VPS:
+
 ```bash
 cd /srv/villadev
 TAG=latest ./deploy.sh
 ```
 
 > Si CD aún no ha corrido, no habrá imagen en GHCR. En ese caso, hacer **primero** un push manual desde tu equipo:
+>
 > ```bash
 > docker build -t ghcr.io/<USER>/villadev-portfolio:latest .
 > echo <token-read-write> | docker login ghcr.io -u <USER> --password-stdin
 > docker push ghcr.io/<USER>/villadev-portfolio:latest
 > ```
+>
 > (Generar el token de **write:packages** sólo para este paso; eliminarlo después.)
 
 - [ ] **Step 2: Verificar contenedor sano**
@@ -4411,6 +5090,7 @@ curl -s http://127.0.0.1:3001/api/health
 - [ ] **Step 3: Verificar desde Internet**
 
 Desde tu equipo:
+
 ```bash
 curl -sI https://villadev.<tld>/api/health
 curl -s  https://villadev.<tld>/api/health
@@ -4421,6 +5101,7 @@ Esperado: 200, JSON `{"status":"ok",...}`, header `strict-transport-security`, `
 - [ ] **Step 4: Test E2E remoto**
 
 Desde tu equipo:
+
 ```bash
 E2E_BASE_URL=https://villadev.<tld> npm run test:e2e -- home
 ```
@@ -4432,6 +5113,7 @@ Esperado: home renderiza, lang switch, health 200.
 ### Tarea J8: Backups del `.env` y configuración Nginx (cumple §14 del spec)
 
 **Files (en el VPS):**
+
 - Create: `/srv/villadev/backup.sh`, cron entry
 
 > Fase 1 es stateless: no hay DB de app, pero sí hay configuración irrecuperable si se pierde el VPS (el `.env` con las credenciales y el vhost de Nginx). Backup semanal cifrado a un bucket externo.
@@ -4440,9 +5122,9 @@ Esperado: home renderiza, lang switch, health 200.
 
 Recomendación: **Backblaze B2** (10GB gratis). Alternativas: Cloudflare R2 (10GB gratis), Wasabi (trial 30d).
 
-  - Crear cuenta en `https://www.backblaze.com/sign-up`.
-  - Crear bucket privado: `villadev-vps-backups` (region más cercana).
-  - Crear "Application Key" con acceso sólo a ese bucket. Anotar `keyID`, `applicationKey`, `endpoint` (`s3.<region>.backblazeb2.com`).
+- Crear cuenta en `https://www.backblaze.com/sign-up`.
+- Crear bucket privado: `villadev-vps-backups` (region más cercana).
+- Crear "Application Key" con acceso sólo a ese bucket. Anotar `keyID`, `applicationKey`, `endpoint` (`s3.<region>.backblazeb2.com`).
 
 - [ ] **Step 2: Instalar `restic` y configurar en el VPS**
 
@@ -4453,6 +5135,7 @@ sudo install -d -m 700 -o villadev -g villadev /home/villadev/.config/restic
 ```
 
 Pegar TÚ las credenciales (no en chat):
+
 ```bash
 nano /home/villadev/.config/restic/env
 # contenido:
@@ -4536,6 +5219,7 @@ git add deploy/host/backup.sh.example docs/runbook.md && git commit -m "infra: w
 ### Tarea K1: Threat model
 
 **Files:**
+
 - Create: `docs/threat-model.md`
 
 - [ ] **Step 1: Crear el doc** con: descripción del sistema, trust boundaries (Internet ↔ CF ↔ Nginx ↔ Container ↔ Resend), assets (código, .env, fotos, certs, logs), STRIDE expandido por componente (incluyendo lo que está en §9.2 del spec), controles asociados a cada amenaza, y residual risks aceptados.
@@ -4546,10 +5230,12 @@ Plantilla mínima:
 # Threat Model — VillaDev Portafolio (Fase 1)
 
 ## Sistema y trust boundaries
+
 - Internet (untrusted) → Cloudflare (DDoS/WAF, untrusted-but-mediated) → Nginx en el VPS (TLS termination, trusted) → Contenedor Next.js (trusted, no-root, read-only FS) → Resend API (trusted-3rd-party).
 - Sin DB en uso productivo en Fase 1. PostgreSQL instalado pero sin rol/DB de app.
 
 ## Assets
+
 - Código fuente y secretos en `.env` (alta sensibilidad).
 - Foto de perfil (baja).
 - Logs (media — pueden contener IPs y patrones de abuso).
@@ -4557,9 +5243,11 @@ Plantilla mínima:
 - Imagen Docker en GHCR (media — pública o privada según repo).
 
 ## STRIDE expandido
+
 [matriz por componente con amenaza, vector, control, residual risk]
 
 ## Riesgos residuales aceptados Fase 1
+
 - Sin DAST automático (planificado Fase 4).
 - Sin firma cosign de imágenes (Fase 4).
 - Rate limit en memoria (1 réplica, OK).
@@ -4576,6 +5264,7 @@ git add docs/threat-model.md && git commit -m "docs: threat model for Fase 1"
 ### Tarea K2: Runbook operativo
 
 **Files:**
+
 - Create: `docs/runbook.md`
 
 - [ ] **Step 1: Crear el doc** con secciones:
@@ -4601,6 +5290,7 @@ git add docs/runbook.md && git commit -m "docs: operational runbook (start/stop/
 ### Tarea K3: Guía de secretos para el operador
 
 **Files:**
+
 - Create: `docs/secrets-setup.md`
 
 - [ ] **Step 1: Consolidar** las guías manuales de F5, I3, J4, J6 en un solo documento ordenado:
@@ -4612,30 +5302,38 @@ Todos los secretos los pegas tú directamente en el lugar donde se usan.
 **Ningún secreto debe pasar por chat, PRs, issues, o commits.**
 
 ## 1. Resend API key
+
 (Ver Fase F5, pasos 1–4.)
 
 ## 2. SSH deploy key
+
 (Ver Fase I3, pasos 1–2 + 4.)
 
 ## 3. GitHub repo secrets
+
 (Ver Fase I3, paso 4. Lista exacta de los 4 secrets.)
 
 ## 4. DNS provider token para Certbot
+
 (Ver Fase J4, pasos 3–4.)
 
 ## 5. `/srv/villadev/.env` en el VPS
+
 (Ver Fase J6, paso 1.)
 
 ## 6. (Opcional) GHCR pull token si la imagen es privada
+
 (Ver Fase J6, paso 2.)
 
 ## Rotación
+
 - Resend key: cada 6 meses o si sospechas filtración. Revoca la anterior tras pegar la nueva.
 - SSH deploy key: cada 12 meses. Generar par nuevo, agregar `.pub` al VPS, actualizar GH secret, eliminar la vieja del VPS.
 - Cloudflare DNS token: cada 12 meses.
 - GHCR pull token: cada 12 meses.
 
 ## Auditoría
+
 - Revisar `~/.ssh/authorized_keys` del usuario `villadev` cada trimestre.
 - Revisar repo `Settings → Secrets and variables → Actions` cada trimestre.
 ```
@@ -4695,6 +5393,7 @@ Visitar `https://www.ssllabs.com/ssltest/analyze.html?d=villadev.<tld>&hideResul
 - [ ] **Step 4: ssh-audit del VPS**
 
 Desde tu equipo:
+
 ```bash
 docker run --rm positronsecurity/ssh-audit -p <PUERTO> villadev.<tld>
 ```
@@ -4712,6 +5411,7 @@ Esperado: A+, sin warnings rojos.
 - [ ] **Step 6: Formulario real**
 
 Abrir `https://villadev.<tld>/es#contact`, enviar un mensaje real. Verificar:
+
 - llega a `villacis.j@icloud.com`.
 - Resend dashboard registra el envío.
 - Logs del contenedor muestran `contact.sent`.
@@ -4759,9 +5459,3 @@ git push
 - [ ] **Step 4: Anunciar internamente** (commit message o issue cerrado) que **Fase 1 está cerrada** y listar lo que entra en Fase 2 según el roadmap del spec §18.
 
 ---
-
-
-
-
-
-
