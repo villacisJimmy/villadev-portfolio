@@ -1,0 +1,8 @@
+title = "VillaDev gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "allow .env.example placeholders"
+paths = ['''(^|/)\.env\.example$''']

@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+set -e
+gitleaks protect --staged --redact --no-banner
+npx --no -- lint-staged
+npx --no -- tsc --noEmit
