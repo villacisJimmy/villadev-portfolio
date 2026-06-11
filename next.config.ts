@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
   experimental: { typedRoutes: true },
+  // Lint runs in CI (Phase I) — not during production build.
+  eslint: { ignoreDuringBuilds: true },
 };
 
 export default withNextIntl(nextConfig);
