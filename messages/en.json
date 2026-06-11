@@ -1,0 +1,192 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact",
+    "cta": "Let's talk"
+  },
+  "hero": {
+    "badge": "Available for projects",
+    "h1a": "Web apps and automations,",
+    "h1b": "secure by design.",
+    "lead": "I design, build and ship solutions at the speed your business needs. <strong>AI-powered development</strong> to deliver fast — <strong>security built in</strong> from the very first commit.",
+    "cta1": "See services",
+    "cta2": "Get in touch",
+    "stat1": { "n": "8+", "l": "years in tech & IT support" },
+    "stat2": { "n": "12+", "l": "technical certifications" },
+    "stat3": { "n": "CCNA", "l": "+ offensive security training" }
+  },
+  "services": {
+    "eyebrow": "What I do",
+    "h2": "Services built to deliver value, fast.",
+    "p": "Full-stack, automation and security under one roof. Fewer vendors, less friction, more results.",
+    "items": {
+      "svc1": {
+        "t": "Web application development",
+        "p": "End-to-end custom apps, from prototype to deployment. Maintainable code in JavaScript, Python and Django, ready to grow with you."
+      },
+      "svc2": {
+        "t": "Automation with n8n",
+        "p": "I connect your tools and remove repetitive manual work. Flows that sync data, notify and run processes on their own — hours saved every week."
+      },
+      "svc3": {
+        "t": "Security by design",
+        "p": "Pentesting, hardening and best practices baked into the architecture, not patched on later. Your product is born protected and auditable."
+      },
+      "svc4": {
+        "t": "AI-accelerated delivery",
+        "p": "AI-assisted development: shorter delivery times, same engineering rigor. We iterate at the speed the market demands."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "About me",
+    "h2": "A network engineer who builds, automates and protects.",
+    "p1": "I'm <strong>Jimmy Villacis</strong>, a Network & Connectivity Engineer (Cisco CCNA) with offensive-security training and full-stack development experience. I pair a solid infrastructure foundation with modern development to build solutions that work — and that are protected.",
+    "p2": "After international experience in Australia, I now help businesses <strong>digitize and automate processes</strong> without sacrificing security. I leverage AI to shorten development cycles while keeping control, quality and best practices.",
+    "facts": {
+      "f1k": "Location",
+      "f1v": "Santiago, Chile",
+      "f2k": "Availability",
+      "f2v": "Remote · Hybrid · On-site",
+      "f3k": "Languages",
+      "f3v": "Spanish (native) · English (B2)",
+      "f4k": "Focus",
+      "f4v": "Security by design"
+    }
+  },
+  "projects": {
+    "eyebrow": "Work",
+    "h2": "Selected projects.",
+    "p": "A sample of my technical work. I'm expanding this space with new development and automation case studies.",
+    "viewall": "View all projects",
+    "prj1": {
+      "t": "Cybersecurity Technical Blog",
+      "p": "Practical articles and notes on offensive security, networking and tooling. Lab documentation and learnings.",
+      "status": "Live",
+      "link": "Visit blog"
+    },
+    "prj2": {
+      "t": "Process automation with n8n",
+      "p": "Case study in progress: tool integrations and automated flows to cut down manual work.",
+      "status": "Coming soon",
+      "link": "Coming soon"
+    },
+    "prj3": {
+      "t": "Full-stack web application",
+      "p": "Upcoming project: a custom app built with a focus on performance, maintainability and security.",
+      "status": "Coming soon",
+      "link": "Coming soon"
+    }
+  },
+  "experience": {
+    "eyebrow": "Track record",
+    "h2": "Professional experience.",
+    "p": "A foundation combining networking, infrastructure support and enterprise customer service.",
+    "items": {
+      "exp1": {
+        "role": "Support Engineer",
+        "co": "INEV",
+        "when": "Dec 2025 — Present",
+        "p": "Corporate network design, VLAN implementation on UniFi UDM, technical documentation, project management with Gantt charts and information-security improvement proposals."
+      },
+      "exp2": {
+        "role": "International experience",
+        "co": "Melbourne, Australia",
+        "when": "2023 — 2025",
+        "p": "English studies (B2) and work in multicultural environments. Strengthened adaptability, autonomy and technical English in professional contexts."
+      },
+      "exp3": {
+        "role": "Account Executive",
+        "co": "CGS / Transbank",
+        "when": "2021",
+        "p": "Enterprise client request management, coordination with integrations and support teams, ticketing system handling."
+      },
+      "exp4": {
+        "role": "IT Support N1/N2",
+        "co": "Entel Contact Center",
+        "when": "2018 — 2019",
+        "p": "Windows and Linux user support, equipment configuration (computers, POS, mobile), Active Directory and incident resolution."
+      },
+      "exp5": {
+        "role": "FTTH & Copper Technician",
+        "co": "Cam Telecom",
+        "when": "2018",
+        "p": "Fiber-optic and structured-cabling installation and maintenance, fault diagnosis and CTO/NAP connections."
+      }
+    }
+  },
+  "certs": {
+    "eyebrow": "Credentials",
+    "h2": "Certifications & training.",
+    "p": "Continuous learning across networking, security, cloud and development."
+  },
+  "skills": {
+    "eyebrow": "Stack",
+    "h2": "Technical skills.",
+    "p": "The tools I use to build, automate and secure.",
+    "sk1": "Cybersecurity",
+    "sk1d": "Pentesting, vulnerability assessment and hardening of systems and networks.",
+    "sk2": "Operating Systems",
+    "sk2d": "Administration of Linux, Windows and macOS environments, desktop and server.",
+    "sk3": "Web Development",
+    "sk3d": "Custom full-stack applications, from front-end to the database.",
+    "sk4": "Tools & DevOps",
+    "sk4d": "Containers, version control and reproducible deployment environments.",
+    "sk5": "Artificial Intelligence",
+    "sk5d": "AI-assisted development to speed up delivery without losing rigor.",
+    "sk6": "Automation",
+    "sk6d": "Automated workflows and integrations that remove manual work."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "h2": "Got a project in mind?",
+    "p": "Tell me what you need to build or automate. I reply fast and propose a clear path forward."
+  },
+  "form": {
+    "name": "Name",
+    "namePh": "Your name",
+    "email": "Email",
+    "emailPh": "you@example.com",
+    "subject": "Subject",
+    "opts": {
+      "proyecto": "Web application development",
+      "consultoria": "Automation with n8n",
+      "colaboracion": "Security / audit",
+      "otro": "Other"
+    },
+    "message": "Message",
+    "messagePh": "Briefly describe your project…",
+    "send": "Send message",
+    "states": {
+      "submitting": "Sending…",
+      "success": "Message sent. I'll get back to you shortly.",
+      "error": "Could not send. Try again in a minute.",
+      "rateLimit": "Too many attempts. Try again later.",
+      "validation": "Check the fields."
+    }
+  },
+  "footer": {
+    "tagline": "Web apps, automation and security by design. Built in Santiago, Chile.",
+    "nav": "Navigation",
+    "connect": "Connect",
+    "rights": "All rights reserved.",
+    "built": "Designed and developed with a security mindset."
+  },
+  "projpage": {
+    "title": "Projects — VillaDev",
+    "eyebrow": "Work portfolio",
+    "h2": "All projects.",
+    "p": "Web development, automation and security case studies. This catalog grows with every new project.",
+    "back": "Back to home"
+  },
+  "filter": {
+    "all": "All",
+    "web": "Web development",
+    "auto": "Automation",
+    "sec": "Security"
+  }
+}

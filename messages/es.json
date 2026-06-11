@@ -1,0 +1,192 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "skills": "Skills",
+    "contact": "Contacto",
+    "cta": "Hablemos"
+  },
+  "hero": {
+    "badge": "Disponible para proyectos",
+    "h1a": "Aplicaciones web y automatizaciones,",
+    "h1b": "con seguridad por diseño.",
+    "lead": "Diseño, desarrollo e implemento soluciones a la velocidad que tu negocio necesita. <strong>Desarrollo potenciado por IA</strong> para entregar rápido — <strong>seguridad integrada</strong> desde el primer commit.",
+    "cta1": "Ver servicios",
+    "cta2": "Conversemos",
+    "stat1": { "n": "8+", "l": "años en tecnología y soporte" },
+    "stat2": { "n": "12+", "l": "certificaciones técnicas" },
+    "stat3": { "n": "CCNA", "l": "+ formación en seguridad ofensiva" }
+  },
+  "services": {
+    "eyebrow": "Lo que hago",
+    "h2": "Servicios pensados para entregar valor, rápido.",
+    "p": "Full-stack, automatización y seguridad bajo un mismo techo. Menos proveedores, menos fricción, más resultados.",
+    "items": {
+      "svc1": {
+        "t": "Desarrollo de aplicaciones web",
+        "p": "Apps a medida de extremo a extremo: del prototipo al despliegue. Código mantenible en JavaScript, Python y Django, listo para crecer contigo."
+      },
+      "svc2": {
+        "t": "Automatización con n8n",
+        "p": "Conecto tus herramientas y elimino el trabajo manual repetitivo. Flujos que sincronizan datos, notifican y ejecutan procesos solos — horas recuperadas cada semana."
+      },
+      "svc3": {
+        "t": "Seguridad por diseño",
+        "p": "Pentesting, hardening y buenas prácticas integradas desde la arquitectura, no como parche. Tu producto nace protegido y auditable."
+      },
+      "svc4": {
+        "t": "Entrega acelerada con IA",
+        "p": "Desarrollo asistido por IA: menos tiempo de entrega, mismo rigor de ingeniería. Iteramos a la velocidad que el mercado exige."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Sobre mí",
+    "h2": "Ingeniero de redes que construye, automatiza y protege.",
+    "p1": "Soy <strong>Jimmy Villacis</strong>, Ingeniero en Conectividad y Redes (Cisco CCNA) con formación en seguridad ofensiva y desarrollo full-stack. Combino una base sólida de infraestructura con desarrollo moderno para crear soluciones que funcionan — y que están protegidas.",
+    "p2": "Tras experiencia internacional en Australia, hoy ayudo a negocios a <strong>digitalizar y automatizar procesos</strong> sin sacrificar seguridad. Aprovecho la IA para acortar tiempos de desarrollo manteniendo control, calidad y buenas prácticas.",
+    "facts": {
+      "f1k": "Ubicación",
+      "f1v": "Santiago, Chile",
+      "f2k": "Modalidad",
+      "f2v": "Remoto",
+      "f3k": "Idiomas",
+      "f3v": "Español (nativo) · Inglés",
+      "f4k": "Enfoque",
+      "f4v": "Seguridad por diseño"
+    }
+  },
+  "projects": {
+    "eyebrow": "Trabajo",
+    "h2": "Proyectos seleccionados.",
+    "p": "Una muestra de mi trabajo técnico. Estoy ampliando este espacio con nuevos casos de desarrollo y automatización.",
+    "viewall": "Ver todos los proyectos",
+    "prj1": {
+      "t": "Blog Técnico de Ciberseguridad",
+      "p": "Artículos y notas prácticas sobre seguridad ofensiva, redes y herramientas. Documentación de laboratorios y aprendizajes.",
+      "status": "En vivo",
+      "link": "Visitar blog"
+    },
+    "prj2": {
+      "t": "Automatización de procesos con n8n",
+      "p": "Caso de estudio en preparación: integración de herramientas y flujos automatizados para reducir trabajo manual.",
+      "status": "Próximamente",
+      "link": "Por publicar"
+    },
+    "prj3": {
+      "t": "Aplicación web full-stack",
+      "p": "Próximo proyecto: una app a medida construida con foco en rendimiento, mantenibilidad y seguridad.",
+      "status": "Próximamente",
+      "link": "Por publicar"
+    }
+  },
+  "experience": {
+    "eyebrow": "Trayectoria",
+    "h2": "Experiencia profesional.",
+    "p": "Una base que combina redes, soporte de infraestructura y atención a clientes empresariales.",
+    "items": {
+      "exp1": {
+        "role": "Ingeniero de Soporte",
+        "co": "INEV",
+        "when": "Dic 2025 — Actual",
+        "p": "Diseño de la red corporativa, implementación de VLANs en plataforma UniFi UDM, documentación técnica, gestión de proyectos con carta Gantt y propuestas de mejora en seguridad informática."
+      },
+      "exp2": {
+        "role": "Experiencia internacional",
+        "co": "Melbourne, Australia",
+        "when": "2023 — 2025",
+        "p": "Estudios de inglés (B2) y trabajo en entornos multiculturales. Fortalecí adaptabilidad, autonomía y el uso del inglés técnico en contextos profesionales."
+      },
+      "exp3": {
+        "role": "Ejecutivo Comercial",
+        "co": "CGS / Transbank",
+        "when": "2021",
+        "p": "Gestión de requerimientos de clientes empresariales, coordinación con áreas de integraciones y soporte, manejo de sistema de tickets."
+      },
+      "exp4": {
+        "role": "Soporte Técnico N1/N2",
+        "co": "Entel Contact Center",
+        "when": "2018 — 2019",
+        "p": "Soporte a usuarios Windows y Linux, configuración de equipos (cómputo, POS, móviles), Active Directory y resolución de incidencias."
+      },
+      "exp5": {
+        "role": "Técnico FTTH y Cobre",
+        "co": "Cam Telecom",
+        "when": "2018",
+        "p": "Instalación y mantenimiento de fibra óptica y cableado estructurado, diagnóstico de fallos y conexión en CTO/NAP."
+      }
+    }
+  },
+  "certs": {
+    "eyebrow": "Credenciales",
+    "h2": "Certificaciones y formación.",
+    "p": "Aprendizaje continuo en redes, seguridad, cloud y desarrollo."
+  },
+  "skills": {
+    "eyebrow": "Stack",
+    "h2": "Habilidades técnicas.",
+    "p": "Las herramientas con las que construyo, automatizo y aseguro.",
+    "sk1": "Ciberseguridad",
+    "sk1d": "Pentesting, análisis de vulnerabilidades y hardening de sistemas y redes.",
+    "sk2": "Sistemas Operativos",
+    "sk2d": "Administración de entornos Linux, Windows y macOS, en escritorio y servidor.",
+    "sk3": "Desarrollo Web",
+    "sk3d": "Aplicaciones full-stack a medida, del front-end a la base de datos.",
+    "sk4": "Herramientas & DevOps",
+    "sk4d": "Contenedores, control de versiones y entornos de despliegue reproducibles.",
+    "sk5": "Inteligencia Artificial",
+    "sk5d": "Desarrollo asistido por IA para acelerar entregas sin perder rigor.",
+    "sk6": "Automatización",
+    "sk6d": "Flujos automatizados e integraciones que eliminan el trabajo manual."
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "h2": "¿Tienes un proyecto en mente?",
+    "p": "Cuéntame qué necesitas construir o automatizar. Respondo rápido y te propongo un camino claro."
+  },
+  "form": {
+    "name": "Nombre",
+    "namePh": "Tu nombre",
+    "email": "Correo",
+    "emailPh": "tucorreo@ejemplo.com",
+    "subject": "Asunto",
+    "opts": {
+      "proyecto": "Desarrollo de aplicación web",
+      "consultoria": "Automatización con n8n",
+      "colaboracion": "Seguridad / auditoría",
+      "otro": "Otro"
+    },
+    "message": "Mensaje",
+    "messagePh": "Describe brevemente tu proyecto…",
+    "send": "Enviar mensaje",
+    "states": {
+      "submitting": "Enviando…",
+      "success": "Mensaje enviado. Te respondo pronto.",
+      "error": "No se pudo enviar. Intenta de nuevo en un minuto.",
+      "rateLimit": "Demasiados intentos. Intenta más tarde.",
+      "validation": "Revisa los campos."
+    }
+  },
+  "footer": {
+    "tagline": "Aplicaciones web, automatización y seguridad por diseño. Construido en Santiago, Chile.",
+    "nav": "Navegación",
+    "connect": "Conecta",
+    "rights": "Todos los derechos reservados.",
+    "built": "Diseñado y desarrollado con foco en seguridad."
+  },
+  "projpage": {
+    "title": "Proyectos — VillaDev",
+    "eyebrow": "Portafolio de trabajo",
+    "h2": "Todos los proyectos.",
+    "p": "Casos de desarrollo web, automatización y seguridad. Este catálogo crece con cada nuevo proyecto.",
+    "back": "Volver al inicio"
+  },
+  "filter": {
+    "all": "Todos",
+    "web": "Desarrollo web",
+    "auto": "Automatización",
+    "sec": "Seguridad"
+  }
+}

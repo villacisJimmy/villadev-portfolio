@@ -1,13 +1,14 @@
+import createNextIntlPlugin from "next-intl/plugin";
 import type { NextConfig } from "next";
+
+const withNextIntl = createNextIntlPlugin("./src/lib/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   output: "standalone",
   poweredByHeader: false,
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
-  experimental: {
-    typedRoutes: true,
-  },
+  experimental: { typedRoutes: true },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
