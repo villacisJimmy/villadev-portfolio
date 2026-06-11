@@ -1,0 +1,43 @@
+/* ============================================================
+   SKILLS — ported from prototype styles.css (lines 672-701)
+   Note: prototype .chips2 rules intentionally skipped — the new
+   design uses a single description paragraph per category.
+   ============================================================ */
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: clamp(14px, 2vw, 20px);
+}
+
+.skillCat {
+  background: linear-gradient(180deg, var(--card), var(--bg-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6em 1.6em 1.8em;
+}
+
+.skillCat .ch {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--cyan);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.3em;
+}
+
+.skillCat .ch .ln {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.skillDesc {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.55;
+}
