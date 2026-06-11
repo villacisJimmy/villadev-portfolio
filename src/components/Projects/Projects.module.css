@@ -1,0 +1,225 @@
+/* ============================================================
+   PROJECTS — ported from prototype styles.css (lines 521-607, 842-850)
+   ============================================================ */
+
+.projGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.2vw, 24px);
+}
+
+.projGrid.all {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.proj {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, var(--card), var(--bg-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s,
+    box-shadow 0.35s;
+}
+
+.proj:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-2);
+  box-shadow: var(--shadow);
+}
+
+.proj .thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background:
+    linear-gradient(135deg, rgba(59, 130, 246, 0.16), rgba(34, 211, 238, 0.07)), var(--bg-2);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.proj .thumb .glyph {
+  font-family: var(--mono);
+  color: rgba(255, 255, 255, 0.16);
+  font-size: 2.4rem;
+  pointer-events: none;
+}
+
+.proj .thumb .dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+.proj .body {
+  padding: 1.4em 1.4em 1.6em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.proj .status {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--warn);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.proj.live .status {
+  color: var(--term);
+}
+
+.proj h3 {
+  font-size: 1.18rem;
+  margin-top: 0.6em;
+}
+
+.proj p {
+  color: var(--muted);
+  font-size: 0.94rem;
+  margin: 0.6em 0 0;
+  flex: 1;
+}
+
+.proj .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-top: 1.2em;
+}
+
+.proj .tags span {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--blue-2);
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.16);
+  padding: 0.3em 0.6em;
+  border-radius: 6px;
+}
+
+.proj .link {
+  margin-top: 1.3em;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.proj .link .arrow {
+  transition: transform 0.25s;
+}
+
+.proj:hover .link .arrow {
+  transform: translate(3px, -3px);
+}
+
+/* View-all button */
+.projViewall {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+/* Hide (used by category filter on catalog page in Phase E) */
+.proj.hide {
+  display: none;
+}
+
+/* Catalog page chrome (used by Phase E) */
+.subnav {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+
+.subnav .back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  color: var(--muted);
+  padding: 0.5em 0.9em;
+  border: 1px solid var(--border-2);
+  border-radius: 999px;
+  transition:
+    color 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.subnav .back:hover {
+  color: var(--text);
+  border-color: var(--blue);
+  transform: translateX(-3px);
+}
+
+.pageHead {
+  padding-top: 140px;
+}
+
+.projFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.projFilter button {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.55em 1.1em;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.projFilter button:hover {
+  color: var(--text);
+  border-color: var(--border-2);
+}
+
+.projFilter button.active {
+  color: #04121f;
+  background: var(--grad);
+  border-color: transparent;
+  font-weight: 600;
+}
+
+/* Responsive — from prototype styles.css lines 842-850 */
+@media (max-width: 980px) {
+  .projGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projGrid.all {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .projGrid {
+    grid-template-columns: 1fr;
+  }
+  .projGrid.all {
+    grid-template-columns: 1fr;
+  }
+}
