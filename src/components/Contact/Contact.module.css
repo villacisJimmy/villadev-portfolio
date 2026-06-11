@@ -1,0 +1,157 @@
+/* ============================================================
+   CONTACT — ported from prototype styles.css (lines 706-768, 841)
+   ============================================================ */
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+}
+
+.contactBody h2 {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+}
+
+.contactBody p {
+  color: var(--muted);
+  margin: 1em 0 0;
+  font-size: 1.08rem;
+  max-width: 42ch;
+}
+
+.contactList {
+  margin-top: 2.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+}
+
+.contactList a {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  padding: 0.9em 1.1em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+  transition:
+    border-color 0.25s,
+    transform 0.25s,
+    background 0.25s;
+  font-family: var(--mono);
+  font-size: 0.92rem;
+}
+
+.contactList a:hover {
+  border-color: var(--blue);
+  transform: translateX(4px);
+  background: var(--card);
+}
+
+.ci {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: var(--grad-soft);
+  border: 1px solid var(--border-2);
+  color: var(--cyan);
+}
+
+.ci svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cl {
+  color: var(--dim);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cv {
+  color: var(--text);
+  margin-top: 0.35em;
+}
+
+.contactList a > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form */
+.formCard {
+  background: linear-gradient(180deg, var(--card), var(--bg-2));
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  padding: clamp(26px, 3.5vw, 40px);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.field {
+  margin-bottom: 1.2em;
+}
+
+.field label {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 0.55em;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-sm);
+  padding: 0.85em 1em;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--dim);
+}
+
+.formCard :global(.btn-primary) {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.4em;
+}
+
+.formNote {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--dim);
+  margin-top: 1em;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}

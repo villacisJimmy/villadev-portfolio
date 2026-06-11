@@ -6,7 +6,7 @@ import { ProjectsSection } from "@/components/Projects/ProjectsSection";
 import { Experience } from "@/components/Experience/Experience";
 import { Certifications } from "@/components/Certifications/Certifications";
 import { Skills } from "@/components/Skills/Skills";
-// import { Contact } from "@/components/Contact/Contact";  // TODO: enable when Phase F creates it
+import { Contact } from "@/components/Contact/Contact";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -20,7 +20,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <Experience />
       <Certifications />
       <Skills />
-      {/* <Contact /> */}
+      <Contact />
     </>
   );
 }
