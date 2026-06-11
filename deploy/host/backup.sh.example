@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# backup.sh — weekly restic backup of .env, nginx vhost, and letsencrypt data.
+# Run as villadev on the VPS via cron. Restic env vars in /home/villadev/.config/restic/env.
+set -euo pipefail
+source /home/villadev/.config/restic/env
+
+TMP=$(mktemp -d)
+trap "rm -rf $TMP" EXIT
+
+sudo cat /srv/villadev/.env > "$TMP/villadev.env"
+sudo cat /etc/nginx/sites-available/villadev.conf > "$TMP/villadev.nginx.conf"
+sudo tar -C / -czf "$TMP/letsencrypt.tar.gz" etc/letsencrypt/live etc/letsencrypt/renewal etc/letsencrypt/archive
+
+restic backup "$TMP" --tag fase1 --tag villadev
+restic forget --tag villadev --keep-daily 7 --keep-weekly 8 --keep-monthly 12 --prune
+restic check --read-data-subset=1%
+echo "backup ok"
