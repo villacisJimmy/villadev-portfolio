@@ -23,10 +23,10 @@ export async function Footer() {
           <div className={styles["footerLinks"]}>
             <div className={styles["footerCol"]}>
               <h4>{t("footer.nav")}</h4>
-              <a href="/#services">{t("nav.services")}</a>
-              <a href="/#about">{t("nav.about")}</a>
-              <a href="/#projects">{t("nav.projects")}</a>
-              <a href="/#experience">{t("nav.experience")}</a>
+              <a href="#services">{t("nav.services")}</a>
+              <a href="#about">{t("nav.about")}</a>
+              <a href="#projects">{t("nav.projects")}</a>
+              <a href="#experience">{t("nav.experience")}</a>
             </div>
             <div className={styles["footerCol"]}>
               <h4>{t("footer.connect")}</h4>

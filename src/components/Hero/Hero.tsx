@@ -24,10 +24,10 @@ export async function Hero() {
           </RevealOnScroll>
           <RevealOnScroll delay={3}>
             <div className={styles["heroCta"]}>
-              <a href="/#services" className="btn btn-primary">
+              <a href="#services" className="btn btn-primary">
                 {t("cta1")}
               </a>
-              <a href="/#contact" className="btn btn-ghost">
+              <a href="#contact" className="btn btn-ghost">
                 {t("cta2")} ↗
               </a>
             </div>

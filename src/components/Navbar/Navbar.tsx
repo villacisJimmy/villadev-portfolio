@@ -28,25 +28,25 @@ export function Navbar() {
         <nav>
           <ul className={styles["navLinks"]}>
             <li>
-              <a href="/#services">{t("services")}</a>
+              <a href="#services">{t("services")}</a>
             </li>
             <li>
-              <a href="/#about">{t("about")}</a>
+              <a href="#about">{t("about")}</a>
             </li>
             <li>
-              <a href="/#projects">{t("projects")}</a>
+              <a href="#projects">{t("projects")}</a>
             </li>
             <li>
-              <a href="/#experience">{t("experience")}</a>
+              <a href="#experience">{t("experience")}</a>
             </li>
             <li>
-              <a href="/#skills">{t("skills")}</a>
+              <a href="#skills">{t("skills")}</a>
             </li>
           </ul>
         </nav>
         <div className={styles["navRight"]}>
           <LangSwitch />
-          <a href="/#contact" className="btn btn-primary">
+          <a href="#contact" className="btn btn-primary">
             {t("cta")}
           </a>
           <MobileMenu />
