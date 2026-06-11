@@ -1,0 +1,56 @@
+/* ============================================================
+   CERTIFICATIONS — ported from prototype styles.css (lines 640-667)
+   ============================================================ */
+
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.cert {
+  background: var(--bg-2);
+  padding: 1.3em 1.4em;
+  display: flex;
+  gap: 0.9em;
+  align-items: flex-start;
+  transition: background 0.25s;
+}
+
+.cert:hover {
+  background: var(--card);
+}
+
+.cert .yr {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--cyan);
+  border: 1px solid var(--border-2);
+  border-radius: 7px;
+  padding: 0.35em 0.55em;
+  flex-shrink: 0;
+  min-width: 46px;
+  text-align: center;
+}
+
+.cert .yr.live {
+  color: var(--term);
+  border-color: rgba(67, 230, 160, 0.3);
+}
+
+.cert .info .name {
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+
+.cert .info .iss {
+  color: var(--dim);
+  font-size: 0.82rem;
+  margin-top: 0.25em;
+  font-family: var(--mono);
+}
