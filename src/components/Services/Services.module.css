@@ -1,0 +1,96 @@
+/* ============================================================
+   SERVICES — ported from prototype styles.css (lines 401-452, 848)
+   ============================================================ */
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2.2vw, 24px);
+}
+
+.service {
+  position: relative;
+  background: linear-gradient(180deg, var(--card), var(--bg-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(26px, 3vw, 38px);
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s,
+    box-shadow 0.35s;
+}
+
+.service::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    420px 240px at var(--mx, 50%) var(--my, 0%),
+    rgba(34, 211, 238, 0.1),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-2);
+  box-shadow: var(--shadow);
+}
+
+.service:hover::before {
+  opacity: 1;
+}
+
+.ico {
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: var(--grad-soft);
+  border: 1px solid var(--border-2);
+  color: var(--cyan);
+  margin-bottom: 1.1em;
+}
+
+.ico svg {
+  width: 26px;
+  height: 26px;
+}
+
+.service h3 {
+  font-size: 1.3rem;
+}
+
+.service p {
+  color: var(--muted);
+  margin: 0.7em 0 0;
+  font-size: 0.97rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em;
+  margin-top: 1.3em;
+}
+
+.idx {
+  position: absolute;
+  top: clamp(20px, 3vw, 30px);
+  right: clamp(20px, 3vw, 30px);
+  font-family: var(--mono);
+  color: var(--dim);
+  font-size: 0.8rem;
+}
+
+/* Responsive — from prototype styles.css line 848 */
+@media (max-width: 760px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
