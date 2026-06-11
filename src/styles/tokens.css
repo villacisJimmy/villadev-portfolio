@@ -1,0 +1,35 @@
+:root {
+  /* Surfaces */
+  --bg: #070b14;
+  --bg-2: #0a1020;
+  --panel: #0d1424;
+  --card: #101a2e;
+  --card-2: #13203a;
+  --border: rgba(120, 160, 220, 0.12);
+  --border-2: rgba(120, 160, 220, 0.22);
+
+  /* Text */
+  --text: #e8eef9;
+  --muted: #8b9bb4;
+  --dim: #5e6e88;
+
+  /* Accents */
+  --blue: #3b82f6;
+  --blue-2: #60a5fa;
+  --cyan: #22d3ee;
+  --term: #43e6a0;
+  --term-dim: #1f7a55;
+  --warn: #fbbf24;
+
+  --grad: linear-gradient(110deg, var(--blue) 0%, var(--cyan) 100%);
+  --grad-soft: linear-gradient(110deg, rgba(59, 130, 246, 0.16), rgba(34, 211, 238, 0.1));
+
+  /* Layout */
+  --maxw: 1200px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --radius: 16px;
+  --radius-sm: 10px;
+
+  --shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+  --glow: 0 0 0 1px rgba(59, 130, 246, 0.25), 0 18px 50px -16px rgba(34, 211, 238, 0.28);
+}
