@@ -176,28 +176,30 @@
 }
 
 /* Inline-colored spans written by Terminal.tsx via innerHTML.
-   Declared :global so the literal class names survive CSS-modules hashing. */
-:global(.prompt) {
+   Wrapped under the local .terminal class so CSS-modules accepts the
+   :global() selectors (pure-mode requires at least one local class). */
+.terminal :global(.prompt) {
   color: var(--term);
 }
-:global(.path) {
+.terminal :global(.path) {
   color: var(--blue-2);
 }
-:global(.cmd) {
+.terminal :global(.cmd) {
   color: var(--text);
 }
-:global(.out) {
+.terminal :global(.out) {
   color: var(--muted);
 }
-:global(.ok) {
+.terminal :global(.ok) {
   color: var(--term);
 }
-:global(.key) {
+.terminal :global(.key) {
   color: var(--cyan);
 }
 
-/* Stat number — used by <StatCounter> (className="num") and the static CCNA stat. */
-:global(.num) {
+/* Stat number — used by <StatCounter> (className="num") and the static CCNA stat.
+   Scoped under .heroStats so CSS-modules accepts the :global() selector. */
+.heroStats :global(.num) {
   font-family: var(--mono);
   font-size: clamp(1.6rem, 3vw, 2.1rem);
   font-weight: 700;
