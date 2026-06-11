@@ -1,0 +1,29 @@
+services:
+  app:
+    build: .
+    image: villadev-portfolio:local
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    user: "1001:1001"
+    ports:
+      - "127.0.0.1:3001:3000"
+    env_file: .env
+    mem_limit: 512m
+    cpus: "0.5"
+    pids_limit: 200
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
