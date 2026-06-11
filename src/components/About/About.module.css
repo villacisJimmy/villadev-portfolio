@@ -1,0 +1,147 @@
+/* ============================================================
+   ABOUT — ported from prototype styles.css (lines 457-516, 839-840, 851)
+   ============================================================ */
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+}
+
+.aboutPhoto {
+  position: relative;
+}
+
+.frame {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-2);
+  background: linear-gradient(160deg, var(--card-2), var(--bg-2));
+  aspect-ratio: 4 / 5;
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  opacity: 0.55;
+  animation: scan 4.5s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(560px);
+  }
+}
+
+.corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--cyan);
+  opacity: 0.7;
+}
+
+.c1 {
+  top: 12px;
+  left: 12px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.c2 {
+  top: 12px;
+  right: 12px;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.c3 {
+  bottom: 12px;
+  left: 12px;
+  border-right: 0;
+  border-top: 0;
+}
+
+.c4 {
+  bottom: 12px;
+  right: 12px;
+  border-left: 0;
+  border-top: 0;
+}
+
+.aboutBody h2 {
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+}
+
+.aboutBody p {
+  color: var(--muted);
+  margin: 1.1em 0 0;
+  font-size: 1.04rem;
+}
+
+.aboutBody p strong {
+  color: var(--text);
+}
+
+.aboutFacts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: 2em;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.fact {
+  background: var(--bg-2);
+  padding: 1.1em 1.2em;
+}
+
+.k {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.v {
+  margin-top: 0.35em;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+
+/* Responsive — from prototype styles.css lines 839-840 */
+@media (max-width: 980px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+  .frame {
+    max-width: 360px;
+  }
+}
+
+/* Responsive — from prototype styles.css line 851 */
+@media (max-width: 760px) {
+  .aboutFacts {
+    grid-template-columns: 1fr;
+  }
+}
