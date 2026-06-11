@@ -1,0 +1,175 @@
+/* ============================================================
+   Navbar
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition:
+    background 0.3s,
+    border-color 0.3s,
+    backdrop-filter 0.3s;
+  border-bottom: 1px solid transparent;
+}
+.scrolled {
+  background: rgba(7, 11, 20, 0.72);
+  backdrop-filter: blur(14px) saturate(140%);
+  border-bottom-color: var(--border);
+}
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.brand .mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--grad);
+  color: #04121f;
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 22px -8px rgba(34, 211, 238, 0.6);
+}
+.brand .mark span {
+  transform: translateY(0.5px);
+}
+.brand small {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--dim);
+  letter-spacing: 0.08em;
+  font-weight: 400;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navLinks a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 0.5em 0.85em;
+  border-radius: 8px;
+  transition:
+    color 0.2s,
+    background 0.2s;
+  font-family: var(--mono);
+  letter-spacing: -0.01em;
+}
+.navLinks a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Lang switch */
+.lang {
+  display: inline-flex;
+  border: 1px solid var(--border-2);
+  border-radius: 999px;
+  overflow: hidden;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+}
+.lang button {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  padding: 0.45em 0.75em;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+.langActive {
+  background: var(--grad);
+  color: #04121f;
+  font-weight: 600;
+}
+
+.navToggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-2);
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* ============================================================
+   Mobile menu
+   ============================================================ */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  background: rgba(7, 11, 20, 0.96);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: var(--gutter);
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  visibility: hidden;
+}
+.open {
+  transform: none;
+  visibility: visible;
+}
+.mobileMenu a {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text);
+  padding: 0.5em 0;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+  letter-spacing: -0.02em;
+}
+.mobileMenu a .n {
+  color: var(--cyan);
+  font-size: 0.9rem;
+  margin-right: 0.6em;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 760px) {
+  .navLinks {
+    display: none;
+  }
+  .navToggle {
+    display: grid;
+    place-items: center;
+  }
+}
