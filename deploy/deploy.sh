@@ -9,9 +9,17 @@ if [ ! -f .env ]; then
   exit 1
 fi
 
-: "${GHCR_OWNER:?GHCR_OWNER required}"
-: "${GHCR_REPO:?GHCR_REPO required}"
-: "${TAG:=latest}"
+# Cargar variables desde .env (GHCR_OWNER, GHCR_REPO, TAG por defecto).
+# El TAG pasado por CLI (TAG=sha-xxx ./deploy.sh) tiene prioridad sobre .env.
+CLI_TAG="${TAG:-}"
+set -a
+# shellcheck disable=SC1091
+source ./.env
+set +a
+TAG="${CLI_TAG:-${TAG:-latest}}"
+
+: "${GHCR_OWNER:?GHCR_OWNER required (definir en /srv/villadev/.env)}"
+: "${GHCR_REPO:?GHCR_REPO required (definir en /srv/villadev/.env)}"
 export GHCR_OWNER GHCR_REPO TAG
 
 # Login a GHCR si la imagen es privada (token en /srv/villadev/.ghcr_token, mode 600)
