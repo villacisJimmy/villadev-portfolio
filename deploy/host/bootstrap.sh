@@ -48,7 +48,14 @@ ClientAliveInterval 300
 ClientAliveCountMax 2
 EOF
 sshd -t
-systemctl reload ssh || systemctl reload sshd
+# Ubuntu 22.10+ usa socket activation (ssh.socket), que ignora el Port de
+# sshd_config y deja el listener clavado en el 22. Hay que desactivarlo y
+# usar ssh.service clásico para que el puerto custom tome efecto.
+if systemctl is-enabled ssh.socket >/dev/null 2>&1; then
+  systemctl disable --now ssh.socket
+  systemctl enable ssh.service
+fi
+systemctl restart ssh || systemctl restart sshd
 
 echo "==> UFW"
 ufw --force reset
