@@ -21,8 +21,18 @@ set_real_ip_from 172.64.0.0/13;
 set_real_ip_from 131.0.72.0/22;
 real_ip_header CF-Connecting-IP;
 
-# Rate limit zone para POST a contact (server actions van a /<locale>/...)
-limit_req_zone $binary_remote_addr zone=contact:10m rate=10r/m;
+# Rate limiting en dos capas:
+#  - "general": tope blando anti-flood por IP para TODO el tráfico. Debe ser
+#    holgado: una carga de página legítima son ~15-20 requests (HTML + chunks
+#    JS + CSS + fuentes + imágenes).
+#  - "posts": tope estricto SOLO para POST (server actions / formulario de
+#    contacto). Las requests no-POST obtienen clave vacía y no consumen.
+limit_req_zone $binary_remote_addr zone=general:10m rate=30r/s;
+map $request_method $post_limit_key {
+  default "";
+  POST    $binary_remote_addr;
+}
+limit_req_zone $post_limit_key zone=posts:10m rate=10r/m;
 
 # HTTP → HTTPS redirect
 server {
@@ -75,8 +85,12 @@ server {
     access_log off;
   }
 
+  # 429 (Too Many Requests) en vez del 503 por defecto al exceder el límite
+  limit_req_status 429;
+
   location / {
-    limit_req zone=contact burst=10 nodelay;
+    limit_req zone=general burst=60 nodelay;
+    limit_req zone=posts burst=5 nodelay;
     proxy_pass http://127.0.0.1:3001;
     proxy_http_version 1.1;
     # Host fijado al server_name del vhost (no al header que envía el
