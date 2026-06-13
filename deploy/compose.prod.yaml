@@ -7,6 +7,10 @@ services:
     read_only: true
     tmpfs:
       - /tmp:size=64m,mode=1777
+      # Next.js escribe el caché de optimización de next/image aquí. Con el
+      # rootfs en read-only hay que darle un tmpfs efímero (un caché no
+      # necesita persistir) y que sea escribible por el uid 1001 del runtime.
+      - /app/.next/cache:size=128m,mode=0700,uid=1001,gid=1001
     cap_drop: [ALL]
     security_opt:
       - no-new-privileges:true
