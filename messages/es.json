@@ -79,10 +79,10 @@
       "link": "Visitar blog"
     },
     "prj2": {
-      "t": "Automatización de procesos con n8n",
-      "p": "Caso de estudio en preparación: integración de herramientas y flujos automatizados para reducir trabajo manual.",
-      "status": "Próximamente",
-      "link": "Por publicar"
+      "t": "ÓNICE — Tienda de accesorios",
+      "p": "E-commerce de accesorios para hombre (relojes, cadenas, pulseras, anillos, piercings) con carrito, checkout y panel admin. Next.js 15 + Prisma + PostgreSQL + Mercado Pago.",
+      "status": "En vivo",
+      "link": "Ver demo"
     },
     "prj3": {
       "t": "Brava — OS de gastrobar",

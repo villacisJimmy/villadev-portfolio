@@ -79,10 +79,10 @@
       "link": "Visit blog"
     },
     "prj2": {
-      "t": "Process automation with n8n",
-      "p": "Case study in progress: tool integrations and automated flows to cut down manual work.",
-      "status": "Coming soon",
-      "link": "Coming soon"
+      "t": "ÓNICE — Accessories store",
+      "p": "Men's accessories e-commerce (watches, chains, bracelets, rings, piercings) with cart, checkout and admin panel. Next.js 15 + Prisma + PostgreSQL + Mercado Pago.",
+      "status": "Live",
+      "link": "View demo"
     },
     "prj3": {
       "t": "Brava — Gastrobar OS",
