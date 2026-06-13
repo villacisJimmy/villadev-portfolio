@@ -15,9 +15,18 @@
     "lead": "I design, build and ship solutions at the speed your business needs. <strong>AI-powered development</strong> to deliver fast — <strong>security built in</strong> from the very first commit.",
     "cta1": "See services",
     "cta2": "Get in touch",
-    "stat1": { "n": "8+", "l": "years in tech & IT support" },
-    "stat2": { "n": "12+", "l": "technical certifications" },
-    "stat3": { "n": "CCNA", "l": "+ offensive security training" }
+    "stat1": {
+      "n": "8+",
+      "l": "years in tech & IT support"
+    },
+    "stat2": {
+      "n": "12+",
+      "l": "technical certifications"
+    },
+    "stat3": {
+      "n": "CCNA",
+      "l": "+ offensive security training"
+    }
   },
   "services": {
     "eyebrow": "What I do",
@@ -76,10 +85,10 @@
       "link": "Coming soon"
     },
     "prj3": {
-      "t": "Full-stack web application",
-      "p": "Upcoming project: a custom app built with a focus on performance, maintainability and security.",
-      "status": "Coming soon",
-      "link": "Coming soon"
+      "t": "Brava — Gastrobar OS",
+      "p": "Real-time restaurant operating system: floor plan, orders, kitchen display, live billing and checkout. NestJS + Socket.io + PostgreSQL.",
+      "status": "Live",
+      "link": "View demo"
     }
   },
   "experience": {

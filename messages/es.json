@@ -15,9 +15,18 @@
     "lead": "Diseño, desarrollo e implemento soluciones a la velocidad que tu negocio necesita. <strong>Desarrollo potenciado por IA</strong> para entregar rápido — <strong>seguridad integrada</strong> desde el primer commit.",
     "cta1": "Ver servicios",
     "cta2": "Conversemos",
-    "stat1": { "n": "8+", "l": "años en tecnología y soporte" },
-    "stat2": { "n": "12+", "l": "certificaciones técnicas" },
-    "stat3": { "n": "CCNA", "l": "+ formación en seguridad ofensiva" }
+    "stat1": {
+      "n": "8+",
+      "l": "años en tecnología y soporte"
+    },
+    "stat2": {
+      "n": "12+",
+      "l": "certificaciones técnicas"
+    },
+    "stat3": {
+      "n": "CCNA",
+      "l": "+ formación en seguridad ofensiva"
+    }
   },
   "services": {
     "eyebrow": "Lo que hago",
@@ -76,10 +85,10 @@
       "link": "Por publicar"
     },
     "prj3": {
-      "t": "Aplicación web full-stack",
-      "p": "Próximo proyecto: una app a medida construida con foco en rendimiento, mantenibilidad y seguridad.",
-      "status": "Próximamente",
-      "link": "Por publicar"
+      "t": "Brava — OS de gastrobar",
+      "p": "Sistema operativo para restaurantes en tiempo real: plano de mesas, comandas, KDS de cocina, cuenta en vivo y caja. NestJS + Socket.io + PostgreSQL.",
+      "status": "En vivo",
+      "link": "Ver demo"
     }
   },
   "experience": {
