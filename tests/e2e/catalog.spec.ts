@@ -4,8 +4,8 @@ test("catalog filters by category via query param", async ({ page }) => {
   await page.goto("/es/proyectos");
   await expect(page.locator("[data-cat]")).toHaveCount(3);
 
-  await page.getByRole("button", { name: "Automatización" }).click();
-  await expect(page).toHaveURL(/cat=auto/);
+  await page.getByRole("button", { name: "Seguridad" }).click();
+  await expect(page).toHaveURL(/cat=sec/);
   await expect(page.locator("[data-cat]")).toHaveCount(1);
 
   await page.getByRole("button", { name: "Todos" }).click();
