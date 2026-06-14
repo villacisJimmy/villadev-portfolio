@@ -89,6 +89,12 @@
       "p": "Real-time restaurant operating system: floor plan, orders, kitchen display, live billing and checkout. NestJS + Socket.io + PostgreSQL.",
       "status": "Live",
       "link": "View demo"
+    },
+    "prj4": {
+      "t": "Vuelve — WhatsApp CRM for hospitality",
+      "p": "Native WhatsApp CRM for restaurants in Chile. Captures customers from QR table, measures how many return thanks to Vuelve using a holdout group for causal attribution. Flask + PostgreSQL + Meta Cloud API.",
+      "status": "Live",
+      "link": "View demo"
     }
   },
   "experience": {

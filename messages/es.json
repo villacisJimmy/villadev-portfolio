@@ -89,6 +89,12 @@
       "p": "Sistema operativo para restaurantes en tiempo real: plano de mesas, comandas, KDS de cocina, cuenta en vivo y caja. NestJS + Socket.io + PostgreSQL.",
       "status": "En vivo",
       "link": "Ver demo"
+    },
+    "prj4": {
+      "t": "Vuelve — CRM de WhatsApp para gastronomía",
+      "p": "CRM nativo de WhatsApp para restaurantes en Chile. Captura clientes desde QR mesa, mide qué porcentaje vuelve gracias a Vuelve con grupo holdout para atribución causal. Flask + PostgreSQL + Meta Cloud API.",
+      "status": "En vivo",
+      "link": "Ver demo"
     }
   },
   "experience": {

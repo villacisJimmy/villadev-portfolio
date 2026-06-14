@@ -43,4 +43,18 @@ export const projects: readonly Project[] = [
     glyph: "▦",
     tags: ["NestJS", "Socket.io", "PostgreSQL"],
   },
+  {
+    id: "vuelve",
+    slug: "vuelve-crm",
+    featured: true,
+    titleKey: "prj4.t",
+    descKey: "prj4.p",
+    linkKey: "prj4.link",
+    statusKey: "prj4.status",
+    status: "live",
+    category: "web",
+    url: "https://vuelve.villadev.site",
+    glyph: "↻",
+    tags: ["Flask", "PostgreSQL", "WhatsApp API"],
+  },
 ] as const;
