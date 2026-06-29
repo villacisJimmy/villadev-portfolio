@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/lib/i18n/routing";
 import styles from "./Navbar.module.css";
 
 export function MobileMenu() {
@@ -34,10 +35,10 @@ export function MobileMenu() {
       </button>
       <div className={`${styles["mobileMenu"]} ${open ? styles["open"] : ""}`}>
         {items.map(([k, n]) => (
-          <a key={k} href={`/#${k}`} onClick={close}>
+          <Link key={k} href={{ pathname: "/", hash: k }} onClick={close}>
             <span className={styles["n"]}>{n}</span>
             <span>{t(k)}</span>
-          </a>
+          </Link>
         ))}
       </div>
     </>

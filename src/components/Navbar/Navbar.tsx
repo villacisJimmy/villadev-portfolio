@@ -28,27 +28,27 @@ export function Navbar() {
         <nav>
           <ul className={styles["navLinks"]}>
             <li>
-              <a href="#services">{t("services")}</a>
+              <Link href={{ pathname: "/", hash: "services" }}>{t("services")}</Link>
             </li>
             <li>
-              <a href="#about">{t("about")}</a>
+              <Link href={{ pathname: "/", hash: "about" }}>{t("about")}</Link>
             </li>
             <li>
-              <a href="#projects">{t("projects")}</a>
+              <Link href={{ pathname: "/", hash: "projects" }}>{t("projects")}</Link>
             </li>
             <li>
-              <a href="#experience">{t("experience")}</a>
+              <Link href={{ pathname: "/", hash: "experience" }}>{t("experience")}</Link>
             </li>
             <li>
-              <a href="#skills">{t("skills")}</a>
+              <Link href={{ pathname: "/", hash: "skills" }}>{t("skills")}</Link>
             </li>
           </ul>
         </nav>
         <div className={styles["navRight"]}>
           <LangSwitch />
-          <a href="#contact" className="btn btn-primary">
+          <Link href={{ pathname: "/", hash: "contact" }} className="btn btn-primary">
             {t("cta")}
-          </a>
+          </Link>
           <MobileMenu />
         </div>
       </div>

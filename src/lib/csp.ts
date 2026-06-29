@@ -8,11 +8,16 @@ export function generateNonce(): string {
   return btoa(binary);
 }
 
+// SHA-256 of the inline `color:transparent` style attribute that next/image
+// emits on optimized images. Public CSP hash, not a secret.
+// eslint-disable-next-line no-secrets/no-secrets
+const NEXT_IMAGE_STYLE_HASH = "'sha256-zlqnbDt84zf1iSefLU/ImC54isoprH/MRiVZGskwexk='";
+
 export function buildCsp(nonce: string): string {
   return [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}'`,
-    `style-src 'self' 'nonce-${nonce}' 'unsafe-hashes'`,
+    `style-src 'self' 'nonce-${nonce}' 'unsafe-hashes' ${NEXT_IMAGE_STYLE_HASH}`,
     "img-src 'self' data: blob:",
     "font-src 'self'",
     "connect-src 'self' https://api.resend.com",
